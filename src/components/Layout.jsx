@@ -26,12 +26,20 @@ const Layout = () => {
           <div className="text-3xl font-bold text-slate-200 ml-4">
             <h1 className="font-myFont text-6xl">Etusivu</h1>
           </div>
-          <div className="flex space-x-6 mr-4">
+          <div className="flex space-x-7 mr-4">
             {isLoggedIn ? (
                 <>
-                <div className="text-5xl text-slate-200 font-myFont">Welcome, {getUsername()}</div>
-                  <Link to="/profile" className="text-5xl text-slate-200 font-myFont hover:underline">Account</Link>
-                <button onClick={(e) => handleLogout(navigate)} className="text-5xl text-slate-200 font-myFont hover:underline">Logout</button>
+                  <div
+                      className="text-5xl text-slate-200 font-myFont mr-6">Welcome, {getUsername()}</div>
+                  <Link to="/"
+                        className="text-5xl text-slate-200 font-myFont hover:underline">Home</Link>
+                  <Link to="/matches"
+                        className="text-5xl text-slate-200 font-myFont hover:underline">Matches</Link>
+                  <Link to="/profile"
+                        className="text-5xl text-slate-200 font-myFont hover:underline">Account</Link>
+                  <button onClick={(e) => handleLogout(navigate)}
+                          className="text-5xl text-slate-200 font-myFont hover:underline">Logout
+                  </button>
                 </>
             ) : (
                 <>

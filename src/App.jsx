@@ -6,6 +6,7 @@ import Login from './components/Login.jsx';
 import Register from './components/Register.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 import Profile from './components/Profile.jsx';
+import Matches from './components/Matches.jsx';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
+              <Route path="matches" element={<Matches />} />
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
               <Route path="profile" element={<Profile />} />

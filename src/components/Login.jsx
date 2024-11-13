@@ -22,12 +22,17 @@ const handleLogin = async (event, setError, navigate, setIsLoggedIn) => {
     const response = await fetch(url + '/auth/login', fetchOption);
     const responseData = await response.json();
     if (response.ok) {
-      console.log(responseData);
       const user = responseData.user;
       const username = user.username;
+      const email = user.email;
+      const name = user.name;
+      const id = user.id;
       const token = responseData.token;
       sessionStorage.setItem('token', token);
       sessionStorage.setItem('username', username);
+      sessionStorage.setItem('email', email);
+      sessionStorage.setItem('name', name);
+      sessionStorage.setItem('id', id);
       setIsLoggedIn(true);
       navigate('/');
     } else if (response.status === 401) {

@@ -1,16 +1,22 @@
 import { Link, Outlet } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 
 
-const handleLogout = () => {
+const handleLogout = (navigate) => {
   sessionStorage.removeItem('token');
   sessionStorage.removeItem('username');
+  sessionStorage.removeItem('email');
+  sessionStorage.removeItem('name');
+  sessionStorage.removeItem('id');
+  navigate('/');
   location.reload();
 }
 
 
 const Layout = () => {
   const { isLoggedIn } = useAuth();
+  const navigate = useNavigate();
 
   const getUsername = () => sessionStorage.getItem('username');
 
@@ -24,7 +30,8 @@ const Layout = () => {
             {isLoggedIn ? (
                 <>
                 <div className="text-5xl text-slate-200 font-myFont">Welcome, {getUsername()}</div>
-                <button onClick={handleLogout} className="text-5xl text-slate-200 font-myFont hover:underline">Logout</button>
+                  <Link to="/profile" className="text-5xl text-slate-200 font-myFont hover:underline">Account</Link>
+                <button onClick={(e) => handleLogout(navigate)} className="text-5xl text-slate-200 font-myFont hover:underline">Logout</button>
                 </>
             ) : (
                 <>

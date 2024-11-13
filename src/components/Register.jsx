@@ -31,9 +31,13 @@ const handleSubmit = async (event, setError, navigate, setIsLoggedIn) => {
     const response = await fetch(url + '/users/register', fetchOption);
     const responseData = await response.json();
     if (response.ok) {
-      const { username, token } = responseData;
+      console.log(responseData);
+      const { username, token, email, name, id } = responseData;
       sessionStorage.setItem('token', token);
       sessionStorage.setItem('username', username);
+      sessionStorage.setItem('email', email);
+      sessionStorage.setItem('name', name);
+      sessionStorage.setItem('id', id);
       setIsLoggedIn(true);
       navigate('/');
     } else if (response.status === 409) {
@@ -54,7 +58,7 @@ const Register = () => {
   }
 
   return (
-      <div className="bg-slate-900 w-1/5 m-auto border mt-10 p-5 rounded">
+      <div className="bg-slate-900 w-1/5 m-auto mt-10 p-5 rounded border">
         <form className="flex flex-col m-auto w-3/4"
               onSubmit={(e) => handleSubmit(e, setError, navigate,
                   setIsLoggedIn)}>

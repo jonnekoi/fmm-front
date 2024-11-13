@@ -53,9 +53,6 @@ const Register = () => {
   const navigate = useNavigate();
   const { setIsLoggedIn } = useAuth();
 
-  const goback = () => {
-    navigate('/');
-  }
 
   return (
       <div className="bg-slate-900 w-1/5 m-auto mt-10 p-5 rounded border register-component">
@@ -83,10 +80,6 @@ const Register = () => {
           {error &&
               <p className="text-red-600 font-myFont text-3xl p-1">{error}</p>}
         </form>
-        <button onClick={goback}
-                className="font-myFont text-5xl m-2 hover:underline"
-                type="button">Return
-        </button>
       </div>
   );
 };

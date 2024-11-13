@@ -5,7 +5,6 @@ const Matches = () => {
       <>
         <div className="flex justify-center m-5 matches-mobile">
           <MatchesTable></MatchesTable>
-          <MatchesTable></MatchesTable>
         </div>
       </>
   );

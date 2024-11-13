@@ -1,8 +1,12 @@
+import Leaderboard from './Leaderboard.jsx';
+import NextMatches from './NextMatches.jsx';
+
 const Home = () => {
   return (
-      <>
-      <h1>Home</h1>
-      </>
+      <div className="flex justify-center m-5 matches-mobile">
+        <NextMatches></NextMatches>
+        <Leaderboard></Leaderboard>
+      </div>
   );
 }
 

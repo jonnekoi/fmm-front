@@ -16,11 +16,6 @@ const handleLogout = (navigate) => {
   location.reload();
 }
 
-const toggleHamburgerMenu = () => {
-
-}
-
-
 const Layout = () => {
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
@@ -44,11 +39,13 @@ const Layout = () => {
                   <img onClick={toggleHamburgerMenu} className="hidden hamburger-icon" src={HamburgerMenu} alt="Hamburger Menu"/>
                   <div className="flex space-x-7 mr-4 header-links">
                     <div
-                        className="text-5xl text-slate-200 font-myFont mr-6">Welcome, {getUsername()}</div>
+                        className="text-5xl text-slate-200 font-myFont mr-6">Welcome, {getUsername()}!</div>
                     <Link to="/"
                           className="text-5xl text-slate-200 font-myFont hover:underline">Home</Link>
                     <Link to="/matches"
                           className="text-5xl text-slate-200 font-myFont hover:underline">Matches</Link>
+                    <Link to="/leaderboard"
+                          className="text-5xl text-slate-200 font-myFont hover:underline">Leaderboard</Link>
                     <Link to="/profile"
                           className="text-5xl text-slate-200 font-myFont hover:underline">Account</Link>
                     <button onClick={(e) => handleLogout(navigate)}
@@ -57,20 +54,22 @@ const Layout = () => {
                   </div>
                 </>
             ) : (
-                <>
+                <div className="space-x-7">
                   <Link to="/login" className="text-5xl text-slate-200 font-myFont hover:underline">Login</Link>
                   <Link to="/register" className="text-5xl text-slate-200 font-myFont hover:underline">Register</Link>
-                </>
+                </div>
             )}
           </div>
         </header>
         <div className={`flex flex-col m-5 border-b ${hamburgerMenu
             ? 'block'
             : 'hidden'}`}>
-          <Link to="/"
-                className="text-5xl text-slate-200 font-myFont">H o m e</Link>
+          <Link
+              to="/"className="text-5xl text-slate-200 font-myFont">H o m e</Link>
           <Link to="/matches"
                 className="text-5xl text-slate-200 font-myFont">M a t c h e s</Link>
+          <Link to="/leaderboard"
+                className="text-5xl text-slate-200 font-myFont hover:underline">L e a d e r b o a r d</Link>
           <Link to="/profile"
                 className="text-5xl text-slate-200 font-myFont">A c c o u n t</Link>
           <button onClick={(e) => handleLogout(navigate)}

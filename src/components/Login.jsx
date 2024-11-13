@@ -50,10 +50,6 @@ const Login = () => {
   const { setIsLoggedIn } = useAuth();
 
 
-  const goBack = () => {
-    navigate('/');
-  }
-
   return (
       <div className="bg-slate-900 w-1/5 m-auto border mt-10 p-5 rounded login-component">
         <form className="flex flex-col m-auto w-3/4" onSubmit={(e) => handleLogin(e, setError, navigate, setIsLoggedIn)}>
@@ -64,7 +60,6 @@ const Login = () => {
           <button className="font-myFont text-5xl hover:underline" type="submit">Login</button>{error &&
         <p className="text-red-600 font-myFont text-3xl p-1">{error}</p>}
         </form>
-          <button onClick={goBack} className="font-myFont text-5xl m-2 hover:underline" type="button">Return</button>
       </div>
   );
 };

@@ -22,7 +22,7 @@ const MatchesTable = () => {
   }, []);
 
   return (
-      <div className="w-2/6 flex flex-col matches-mobile-table">
+      <div className="w-2/6 flex flex-col m-3 matches-mobile-table">
         <h1 className="font-myFont text-6xl">Matches</h1>
         <div className="bg-slate-900 m-auto w-full border mt-5">
           <table className="w-full">

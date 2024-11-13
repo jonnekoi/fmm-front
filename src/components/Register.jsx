@@ -58,7 +58,7 @@ const Register = () => {
   }
 
   return (
-      <div className="bg-slate-900 w-1/5 m-auto mt-10 p-5 rounded border">
+      <div className="bg-slate-900 w-1/5 m-auto mt-10 p-5 rounded border register-component">
         <form className="flex flex-col m-auto w-3/4"
               onSubmit={(e) => handleSubmit(e, setError, navigate,
                   setIsLoggedIn)}>

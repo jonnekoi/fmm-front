@@ -58,9 +58,9 @@ const Profile = () => {
 
 
   return (
-      <div className="bg-slate-900 w-1/5 m-auto mt-10 p-5 rounded border">
+      <div className="bg-slate-900 w-1/5 m-auto mt-10 p-5 rounded border profile-mobile">
         <h1 className="font-myFont text-6xl">Account</h1>
-        <form onSubmit={(e) => submitChanges(e, setError)} className="flex flex-col m-auto w-3/4">
+        <form onSubmit={(e) => submitChanges(e, setError)} className="flex flex-col m-auto w-3/4 profile-form">
           <label className="font-myFont text-3xl">Change name</label>
           <input className="m-2 bg-white rounded text-black" type="text"
                  name="name" value={name}

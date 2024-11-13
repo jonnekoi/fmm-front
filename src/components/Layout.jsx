@@ -1,6 +1,9 @@
 import { Link, Outlet } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
+import HamburgerMenu from '../assets/hamburgerMenu.svg';
+import {useState} from 'react';
+
 
 
 const handleLogout = (navigate) => {
@@ -13,10 +16,19 @@ const handleLogout = (navigate) => {
   location.reload();
 }
 
+const toggleHamburgerMenu = () => {
+
+}
+
 
 const Layout = () => {
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
+  const [hamburgerMenu, setHamburgerMenu] = useState(false);
+
+  const toggleHamburgerMenu = () => {
+    setHamburgerMenu(prevState => !prevState);
+  };
 
   const getUsername = () => sessionStorage.getItem('username');
 
@@ -26,20 +38,23 @@ const Layout = () => {
           <div className="text-3xl font-bold text-slate-200 ml-4">
             <h1 className="font-myFont text-6xl">Etusivu</h1>
           </div>
-          <div className="flex space-x-7 mr-4">
+          <div className="">
             {isLoggedIn ? (
                 <>
-                  <div
-                      className="text-5xl text-slate-200 font-myFont mr-6">Welcome, {getUsername()}</div>
-                  <Link to="/"
-                        className="text-5xl text-slate-200 font-myFont hover:underline">Home</Link>
-                  <Link to="/matches"
-                        className="text-5xl text-slate-200 font-myFont hover:underline">Matches</Link>
-                  <Link to="/profile"
-                        className="text-5xl text-slate-200 font-myFont hover:underline">Account</Link>
-                  <button onClick={(e) => handleLogout(navigate)}
-                          className="text-5xl text-slate-200 font-myFont hover:underline">Logout
-                  </button>
+                  <img onClick={toggleHamburgerMenu} className="hidden hamburger-icon" src={HamburgerMenu} alt="Hamburger Menu"/>
+                  <div className="flex space-x-7 mr-4 header-links">
+                    <div
+                        className="text-5xl text-slate-200 font-myFont mr-6">Welcome, {getUsername()}</div>
+                    <Link to="/"
+                          className="text-5xl text-slate-200 font-myFont hover:underline">Home</Link>
+                    <Link to="/matches"
+                          className="text-5xl text-slate-200 font-myFont hover:underline">Matches</Link>
+                    <Link to="/profile"
+                          className="text-5xl text-slate-200 font-myFont hover:underline">Account</Link>
+                    <button onClick={(e) => handleLogout(navigate)}
+                            className="text-5xl text-slate-200 font-myFont hover:underline">Logout
+                    </button>
+                  </div>
                 </>
             ) : (
                 <>
@@ -49,8 +64,21 @@ const Layout = () => {
             )}
           </div>
         </header>
+        <div className={`flex flex-col m-5 border-b ${hamburgerMenu
+            ? 'block'
+            : 'hidden'}`}>
+          <Link to="/"
+                className="text-5xl text-slate-200 font-myFont">H o m e</Link>
+          <Link to="/matches"
+                className="text-5xl text-slate-200 font-myFont">M a t c h e s</Link>
+          <Link to="/profile"
+                className="text-5xl text-slate-200 font-myFont">A c c o u n t</Link>
+          <button onClick={(e) => handleLogout(navigate)}
+                  className="text-5xl text-slate-200 font-myFont hover:underline mb-5">L o g o u t
+          </button>
+        </div>
         <main>
-          <Outlet />
+          <Outlet/>
         </main>
       </>
   );

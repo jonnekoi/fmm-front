@@ -55,7 +55,7 @@ const Login = () => {
   }
 
   return (
-      <div className="bg-slate-900 w-1/5 m-auto border mt-10 p-5 rounded">
+      <div className="bg-slate-900 w-1/5 m-auto border mt-10 p-5 rounded login-component">
         <form className="flex flex-col m-auto w-3/4" onSubmit={(e) => handleLogin(e, setError, navigate, setIsLoggedIn)}>
           <label className="font-myFont text-3xl">Username</label>
           <input className="m-2 bg-white rounded text-black" type="text" name="username"/>

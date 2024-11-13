@@ -6,6 +6,15 @@ const url = 'http://127.0.0.1:3000/v1';
 
 const handleSubmit = async (event, setError, navigate, setIsLoggedIn) => {
   event.preventDefault();
+  const password = event.target.password.value;
+  const confirmPassword = event.target.confirmPassword.value;
+
+  if (password !== confirmPassword) {
+    setError('Passwords do not match!');
+    return;
+  }
+
+  event.preventDefault();
   const formdata = new FormData(event.target);
   const data = Object.fromEntries(formdata);
   data.access = "user";
@@ -28,7 +37,7 @@ const handleSubmit = async (event, setError, navigate, setIsLoggedIn) => {
       setIsLoggedIn(true);
       navigate('/');
     } else if (response.status === 409) {
-      setError('Username already exists');
+      setError('Username already exists!');
     }
   } catch (error) {
     console.log(error);
@@ -40,20 +49,40 @@ const Register = () => {
   const navigate = useNavigate();
   const { setIsLoggedIn } = useAuth();
 
+  const goback = () => {
+    navigate('/');
+  }
+
   return (
-      <div className="w-1/5 m-auto border mt-10 p-5 rounded">
-        <form className="flex flex-col m-auto w-3/4" onSubmit={(e) => handleSubmit(e, setError, navigate, setIsLoggedIn)}>
+      <div className="bg-slate-900 w-1/5 m-auto border mt-10 p-5 rounded">
+        <form className="flex flex-col m-auto w-3/4"
+              onSubmit={(e) => handleSubmit(e, setError, navigate,
+                  setIsLoggedIn)}>
           <label className="font-myFont text-3xl">Name</label>
-          <input className="m-2 bg-white rounded text-black" type="text" name="name" />
+          <input className="m-2 bg-white rounded text-black" type="text"
+                 name="name"/>
           <label className="font-myFont text-3xl">Username</label>
-          <input className="m-2 bg-white rounded text-black" type="text" name="username" />
+          <input className="m-2 bg-white rounded text-black" type="text"
+                 name="username"/>
           <label className="font-myFont text-3xl">Password</label>
-          <input className="m-2 bg-white rounded text-black" type="password" name="password" />
+          <input className="m-2 bg-white rounded text-black" type="password"
+                 name="password"/>
+          <label className="font-myFont text-3xl">Confirm Password</label>
+          <input className="m-2 bg-white rounded text-black" type="password"
+                 name="confirmPassword"/>
           <label className="font-myFont text-3xl">Email</label>
-          <input className="m-2 bg-white rounded text-black" type="text" name="email" />
-          <button className="font-myFont text-5xl hover:underline" type="submit">Register</button>
-          {error && <p className="text-red-600 font-myFont text-3xl p-1">{error}</p>}
+          <input className="m-2 bg-white rounded text-black" type="text"
+                 name="email"/>
+          <button className="font-myFont text-5xl hover:underline"
+                  type="submit">Register
+          </button>
+          {error &&
+              <p className="text-red-600 font-myFont text-3xl p-1">{error}</p>}
         </form>
+        <button onClick={goback}
+                className="font-myFont text-5xl m-2 hover:underline"
+                type="button">Return
+        </button>
       </div>
   );
 };

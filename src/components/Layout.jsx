@@ -1,6 +1,14 @@
 import { Link, Outlet } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 
+
+const handleLogout = () => {
+  sessionStorage.removeItem('token');
+  sessionStorage.removeItem('username');
+  location.reload();
+}
+
+
 const Layout = () => {
   const { isLoggedIn } = useAuth();
 
@@ -14,7 +22,10 @@ const Layout = () => {
           </div>
           <div className="flex space-x-6 mr-4">
             {isLoggedIn ? (
+                <>
                 <div className="text-5xl text-slate-200 font-myFont">Welcome, {getUsername()}</div>
+                <button onClick={handleLogout} className="text-5xl text-slate-200 font-myFont hover:underline">Logout</button>
+                </>
             ) : (
                 <>
                   <Link to="/login" className="text-5xl text-slate-200 font-myFont hover:underline">Login</Link>

@@ -37,15 +37,15 @@ const handleAddMatch = async (event) => {
                 className="flex flex-col m-auto w-3/4">
             <label className="font-myFont text-4xl" htmlFor="homeTeam">Home
               Team</label>
-            <input className="m-2 bg-white rounded text-black p-1" type="text"
+            <input className="m-2 bg-white rounded text-black p-1 text-center" type="text"
                    name="home_team"/>
             <label className="font-myFont text-4xl" htmlFor="awayTeam">Away
               Team</label>
-            <input className="m-2 bg-white rounded text-black p-1" type="text"
+            <input className="m-2 bg-white rounded text-black p-1 text-center" type="text"
                    name="away_team"/>
             <label className="font-myFont text-4xl" htmlFor="date">Day and
               time</label>
-            <input className="m-2 bg-white rounded text-black p-1"
+            <input className="m-2 bg-white rounded text-black p-1 text-center"
                    type="datetime-local" name="matchday"/>
             <button className="font-myFont mt-10 text-4xl hover:underline"
                     type="submit">Add Match

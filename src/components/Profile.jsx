@@ -57,15 +57,15 @@ const Profile = () => {
         <h1 className="font-myFont text-6xl mb-10">Account</h1>
         <form onSubmit={(e) => submitChanges(e, setError)} className="flex flex-col m-auto w-3/4 profile-form">
           <label className="font-myFont text-4xl">Change name</label>
-          <input className="m-2 bg-white rounded text-black p-1" type="text"
+          <input className="m-2 bg-white rounded text-black p-1 text-center" type="text"
                  name="name" value={name}
                  onChange={(e) => setName(e.target.value)}/>
           <label className="font-myFont text-4xl">Change username</label>
-          <input className="m-2 bg-white rounded text-black p-1" type="text"
+          <input className="m-2 bg-white rounded text-black p-1 text-center" type="text"
                  name="username" value={username}
                  onChange={(e) => setUsername((e.target.value))}/>
           <label className="font-myFont text-4xl">Change email</label>
-          <input className="m-2 bg-white rounded text-black p-1" type="text"
+          <input className="m-2 bg-white rounded text-black p-1 text-center" type="text"
                  name="email" value={email}
                  onChange={(e) => setEmail(e.target.value)}/>
           {error && <p className="text-red-600 font-myFont text-3xl p-1">{error}</p>}

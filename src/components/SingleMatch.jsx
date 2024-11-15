@@ -56,9 +56,9 @@ const SingleMatch = ({ matchId }) => {
           <p className="p-2 font-myFont text-6xl"><strong></strong>{timeDisplay}</p>
           <p className="p-2 font-myFont text-6xl"><strong>Home: </strong> {match.home_team}</p>
           <p className="p-2 font-myFont text-6xl"><strong>Away: </strong> {match.away_team}</p>
-          <p className="p-2 font-myFont text-6xl"><strong>Score: </strong> {homeScore} - {awayScore}</p>
+          <p className="p-2 font-myFont text-6xl border-b"><strong>Score: </strong> {homeScore} - {awayScore}</p>
           <form className="flex flex-col m-auto w-3/4 profile-form">
-          <label className="p-2 font-myFont text-6xl">Enter Score (e.g., 1-1 or 0-2):</label>
+          <label className="p-2 font-myFont text-6xl">Enter Score (e.g. 1-1):</label>
           <input className="m-2 bg-white rounded text-black p-1 text-center " type="text" id="score" name="score" pattern="^[0-99]-[0-99]$" required/>
           <button className="font-myFont mt-5 text-6xl hover:underline" type="submit">Submit</button>
           </form>

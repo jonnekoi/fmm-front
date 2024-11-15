@@ -113,10 +113,11 @@ const SingleMatch = ({ matchId }) => {
         <div className="bg-slate-900 m-auto w-full border mt-5 rounded p-10">
           <p className="p-2 font-myFont text-6xl"><strong></strong>{timeDisplay}</p>
           <p className="p-2 font-myFont text-6xl"><strong>Home: </strong> {match.home_team}</p>
-          <p className="p-2 font-myFont text-6xl"><strong>Away: </strong> {match.away_team}</p>
-          <p className="p-2 font-myFont text-6xl border-b"><strong>Score: </strong> {homeScore} - {awayScore}</p>
+          <p className="p-2 font-myFont text-6xl border-b"><strong>Away: </strong> {match.away_team}</p>
           {userGuess && <p className="p-2 font-myFont text-6xl border-b"><strong>Your Guess: </strong> {userGuess}</p>}
-          {!matchStarted && (
+          {matchStarted ? (
+              <p className="p-2 font-myFont text-6xl text-red-500">Closed</p>
+          ) : (
               <form onSubmit={(e) => handleSubmitGuess(e, matchId, setStatusMessage, setUserGuess)}
                     className="flex flex-col m-auto w-3/4 profile-form">
                 <label className="p-2 font-myFont text-6xl">Enter Score (e.g. 1-1):</label>

@@ -20,7 +20,9 @@ const NextMatches = () => {
     fetchMatches(setMatches);
   }, []);
 
+  const currentDate = new Date();
   const sortedMatches = matches
+  .filter(match => new Date(match.matchday) >= currentDate)
   .sort((a, b) => new Date(a.matchday) - new Date(b.matchday))
   .slice(0, 5);
 

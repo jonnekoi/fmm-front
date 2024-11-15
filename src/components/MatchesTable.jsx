@@ -13,19 +13,24 @@ const fetchMatches = async (setMatches) => {
   }
 };
 
-// eslint-disable-next-line react/prop-types
 const MatchesTable = ({ setSelectedMatchId }) => {
   const [matches, setMatches] = useState([]);
+  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     fetchMatches(setMatches);
   }, []);
 
   const sortedMatches = matches.sort((a, b) => new Date(a.matchday) - new Date(b.matchday));
+  const displayedMatches = showAll ? sortedMatches : sortedMatches.slice(0, 5);
 
   const handleMatchClick = (event, id) => {
     event.preventDefault();
     setSelectedMatchId(id);
+  };
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
   };
 
   return (
@@ -42,7 +47,7 @@ const MatchesTable = ({ setSelectedMatchId }) => {
             </tr>
             </thead>
             <tbody>
-            {sortedMatches.map((match) => (
+            {displayedMatches.map((match) => (
                 <tr key={match.id} className="cursor-pointer hover:bg-gray-700" onClick={(event) => handleMatchClick(event, match.id)}>
                   <td className="p-2 border">{format(new Date(match.matchday), 'yyyy-MM-dd HH:mm')}</td>
                   <td className="p-2 border">{match.home_team}</td>
@@ -52,6 +57,9 @@ const MatchesTable = ({ setSelectedMatchId }) => {
             ))}
             </tbody>
           </table>
+          <button onClick={toggleShowAll} className="font-myFont text-4xl hover:underline">
+            {showAll ? 'Hide' : 'Show all'}
+          </button>
         </div>
       </div>
   );

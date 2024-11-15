@@ -21,25 +21,37 @@ const handleLogin = async (event, setError, navigate, setIsLoggedIn) => {
   try {
     const response = await fetch(url + '/auth/login', fetchOption);
     const responseData = await response.json();
+
     if (response.ok) {
       const user = responseData.user;
-      const username = user.username;
-      const email = user.email;
-      const name = user.name;
-      const id = user.id;
-      const token = responseData.token;
-      sessionStorage.setItem('token', token);
-      sessionStorage.setItem('username', username);
-      sessionStorage.setItem('email', email);
-      sessionStorage.setItem('name', name);
-      sessionStorage.setItem('id', id);
-      setIsLoggedIn(true);
-      navigate('/');
+      if (user) {
+        const username = user.username;
+        const email = user.email;
+        const name = user.name;
+        const id = user.id;
+        const token = responseData.token;
+        sessionStorage.setItem('token', token);
+        sessionStorage.setItem('username', username);
+        sessionStorage.setItem('email', email);
+        sessionStorage.setItem('name', name);
+        sessionStorage.setItem('id', id);
+        setIsLoggedIn(true);
+        if (user.access === "admin") {
+          navigate('/admin');
+        } else {
+          navigate('/');
+        }
+      } else {
+        setError('User data is missing in the response');
+      }
     } else if (response.status === 401) {
       setError('Invalid username or password');
+    } else {
+      setError('An error occurred during login');
     }
   } catch (error) {
     console.log(error);
+    setError('An error occurred during login');
   }
 }
 

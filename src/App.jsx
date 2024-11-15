@@ -8,6 +8,7 @@ import { AuthProvider } from './context/AuthContext.jsx';
 import Profile from './components/Profile.jsx';
 import Matches from './components/Matches.jsx';
 import PointsPage from './components/PointsPage.jsx';
+import Admin from './components/Admin.jsx';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
               <Route path="profile" element={<Profile />} />
+              <Route path="/admin" element={<Admin/>} />
             </Route>
           </Routes>
         </Router>

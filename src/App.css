@@ -12,8 +12,18 @@
     width: 100%;
     margin: 0;
   }
+  .admin-mobile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
   .matches-mobile-table {
     width: 90%;
+  }
+  .add-match-mobile {
+      width: 90%;
   }
   .points-table-mobile {
     width: 90%;

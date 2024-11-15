@@ -8,7 +8,6 @@ const fetchMatches = async (setMatches) => {
     const response = await fetch(url + '/matches');
     const responseData = await response.json();
     setMatches(responseData);
-    console.log(responseData);
   } catch (error) {
     console.error('Error fetching matches:', error);
   }

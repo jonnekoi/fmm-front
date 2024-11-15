@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 const url = 'http://127.0.0.1:3000/v1';
 
-const fetchPoints = async (setMatches) => {
+const fetchPoints = async (setPoints) => {
   try {
     const response = await fetch(url + '/users/points');
     const responseData = await response.json();
-    setMatches(responseData);
-    console.log(responseData);
+    setPoints(responseData);
   } catch (error) {
     console.error('Error fetching matches:', error);
   }

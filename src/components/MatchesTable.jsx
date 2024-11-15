@@ -29,8 +29,8 @@ const MatchesTable = ({ setSelectedMatchId }) => {
   };
 
   return (
-      <div className="w-2/6 flex flex-col m-3 matches-mobile-table">
-        <h1 className="font-myFont text-6xl">Matches</h1>
+      <div className="w-2/4 flex flex-col m-3 matches-mobile-table">
+        <h1 className="font-myFont text-6xl" title="Select match for details">Matches</h1>
         <div className="bg-slate-900 m-auto w-full border mt-5 rounded">
           <table className="w-full tableHover">
             <thead>

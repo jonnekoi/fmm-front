@@ -30,8 +30,9 @@ const handleAddMatch = async (event) => {
 
   const AddMatch = () => {
     return (
-        <div className="bg-slate-900 w-1/5 m-auto mt-10 p-5 rounded border add-match-mobile">
-          <h1 className="font-myFont text-6xl mb-10">Add Match</h1>
+        <div className="w-2/6 flex flex-col m-3 add-match-mobile">
+        <h1 className="font-myFont text-6xl">Add Match</h1>
+    <div className="bg-slate-900 m-auto w-full border mt-5 p-5 rounded">
           <form onSubmit={handleAddMatch}
                 className="flex flex-col m-auto w-3/4">
             <label className="font-myFont text-4xl" htmlFor="homeTeam">Home
@@ -50,6 +51,7 @@ const handleAddMatch = async (event) => {
                     type="submit">Add Match
             </button>
           </form>
+        </div>
         </div>
     )
   }

@@ -8,25 +8,24 @@ const fetchMatches = async (setMatches) => {
     const response = await fetch(url + '/matches');
     const responseData = await response.json();
     setMatches(responseData);
+    console.log(responseData);
   } catch (error) {
     console.error('Error fetching matches:', error);
   }
-}
+};
 
-const NextMatches = () => {
+const AdminMatchTable = () => {
   const [matches, setMatches] = useState([]);
 
   useEffect(() => {
     fetchMatches(setMatches);
   }, []);
 
-  const sortedMatches = matches
-  .sort((a, b) => new Date(a.matchday) - new Date(b.matchday))
-  .slice(0, 5);
+  const sortedMatches = matches.sort((a, b) => new Date(a.matchday) - new Date(b.matchday));
 
   return (
       <div className="w-2/6 flex flex-col m-3 matches-mobile-table">
-        <h1 className="font-myFont text-6xl">Next 5 matches</h1>
+        <h1 className="font-myFont text-6xl">Matches</h1>
         <div className="bg-slate-900 m-auto w-full border mt-5 rounded">
           <table className="w-full">
             <thead>
@@ -53,4 +52,4 @@ const NextMatches = () => {
   );
 };
 
-export default NextMatches;
+export default AdminMatchTable;

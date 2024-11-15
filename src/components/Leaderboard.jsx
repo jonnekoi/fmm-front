@@ -23,7 +23,7 @@ const Leaderboard = () => {
   return (
       <div className="w-2/6 flex flex-col m-3 points-table-mobile">
         <h1 className="font-myFont text-6xl">Points</h1>
-        <div className="bg-slate-900 m-auto w-full border mt-5">
+        <div className="bg-slate-900 m-auto w-full border mt-5 rounded">
           <table className="w-full">
             <thead>
             <tr>

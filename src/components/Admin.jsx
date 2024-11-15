@@ -1,12 +1,12 @@
 import AddMatch from './AddMatch.jsx';
-import MatchesTable from './MatchesTable.jsx';
 import Leaderboard from './Leaderboard.jsx';
+import AdminMatchTable from './AdminMatchTable.jsx';
 
 const Admin = () => {
   return (
     <div className="flex justify-center m-5 admin-mobile">
       <AddMatch></AddMatch>
-      <MatchesTable></MatchesTable>
+      <AdminMatchTable></AdminMatchTable>
       <Leaderboard></Leaderboard>
     </div>
   );

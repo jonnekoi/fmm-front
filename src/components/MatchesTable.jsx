@@ -57,7 +57,7 @@ const MatchesTable = ({ setSelectedMatchId }) => {
             ))}
             </tbody>
           </table>
-          <button onClick={toggleShowAll} className="font-myFont text-4xl hover:underline">
+          <button onClick={toggleShowAll} className="font-myFont text-4xl w-full">
             {showAll ? 'Hide' : 'Show all'}
           </button>
         </div>

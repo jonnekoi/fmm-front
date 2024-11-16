@@ -1,7 +1,7 @@
 # Match Prediction App
 
 ## Backend
-[https://github.com/jonnekoi/FMM.git](Backend Repository)
+(https://github.com/jonnekoi/FMM.git)[Backend Repository]
 
 ## Overview
 The Match Prediction App is a web application that allows users to view upcoming matches, submit score predictions, and manage their profiles. The app is built using React and communicates with a backend API to fetch match data and handle user interactions. 

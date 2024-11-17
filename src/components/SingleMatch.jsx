@@ -18,6 +18,7 @@ const handleSubmitGuess = async (event, matchid, setStatusMessage, setUserGuess)
   };
 
   try {
+    console.log(data);
     const response = await fetch(url + `/matches/guess/${matchId}`, fetchOptions);
     if (response.status === 304) {
       setStatusMessage('Match already started');

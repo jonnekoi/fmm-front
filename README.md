@@ -28,7 +28,7 @@ The Match Prediction App is a web application that allows users to view upcoming
 ## Usage
 1. Start the development server:
    ```bash
-   npm run nodemon
+   npm run dev
    ```
 
 ## Technologies

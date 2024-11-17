@@ -6,7 +6,7 @@ import AddPlayer from './AddPlayer.jsx';
 
 const Admin = () => {
   return (
-    <div className="flex justify-center m-5 admin-mobile">
+    <div className="flex flex-wrap justify-center m-5 admin-mobile">
       <AddMatch></AddMatch>
       <AddTeam></AddTeam>
       <AddPlayer></AddPlayer>

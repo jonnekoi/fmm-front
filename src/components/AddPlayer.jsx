@@ -59,7 +59,7 @@ const AddPlayer = () => {
   }, []);
 
   return (
-      <div className="w-2/6 flex flex-col m-3 add-team-mobile">
+      <div className="w-2/6 flex flex-col m-3 add-player-mobile">
         <h1 className="font-myFont text-6xl">Add Player</h1>
         <div className="bg-slate-900 m-auto w-full border mt-5 p-5 rounded">
           <form onSubmit={handleAddPlayer} className="flex flex-col m-auto w-3/4">

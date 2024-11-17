@@ -54,11 +54,32 @@ const fetchUserGuess = async (matchId, setUserGuess) => {
   }
 };
 
+const fetchPlayers = async (matchId, setPlayers) => {
+  const fetchOptions = {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization': 'Bearer ' + sessionStorage.getItem('token')
+    }
+  };
+
+  try {
+    const response = await fetch(url + `/players/match/${matchId}`, fetchOptions);
+    if (response.ok) {
+      const responseData = await response.json();
+      setPlayers(responseData);
+    }
+  } catch (error) {
+    console.error('Error fetching players:', error);
+  }
+};
+
 // eslint-disable-next-line react/prop-types
 const SingleMatch = ({ matchId }) => {
   const [match, setMatch] = useState(null);
   const [statusMessage, setStatusMessage] = useState('');
   const [userGuess, setUserGuess] = useState(null);
+  const [players, setPlayers] = useState([]);
 
   useEffect(() => {
     setUserGuess(null);
@@ -85,6 +106,7 @@ const SingleMatch = ({ matchId }) => {
 
       fetchMatch();
       fetchUserGuess(matchId, setUserGuess);
+      fetchPlayers(matchId, setPlayers);
     }
   }, [matchId]);
 
@@ -121,11 +143,17 @@ const SingleMatch = ({ matchId }) => {
           ) : (
               <form onSubmit={(e) => handleSubmitGuess(e, matchId, setStatusMessage, setUserGuess)}
                     className="flex flex-col m-auto w-3/4 profile-form">
-                <label className="p-2 font-myFont text-6xl">Enter Score (e.g. 1-1):</label>
+                <label className="p-2 font-myFont text-6xl">Enter Score:</label>
                 <input className="m-2 bg-white rounded text-black p-1 text-center "
                        type="text" id="score" name="guess" pattern="^[0-9]{1,2}-[0-9]{1,2}$"
                        defaultValue={userGuess || ''}
                        required/>
+                <label className="p-2 font-myFont text-6xl">Select Scorer:</label>
+                <select className="m-2 bg-white rounded text-black p-1 text-center" name="scorer" required>
+                  {players.map((player) => (
+                      <option key={player.id} value={player.id}>{player.name}</option>
+                  ))}
+                </select>
                 <button className="font-myFont mt-5 text-6xl hover:underline"
                         type="submit">Submit
                 </button>

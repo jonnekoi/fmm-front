@@ -9,6 +9,7 @@ import Profile from './components/Profile.jsx';
 import Matches from './components/Matches.jsx';
 import PointsPage from './components/PointsPage.jsx';
 import Admin from './components/Admin.jsx';
+import LeaguePage from './components/LeaguePage.jsx';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
+              <Route path="leagues" element={<LeaguePage />} />
               <Route path="matches" element={<Matches />} />
               <Route path="leaderboard" element={<PointsPage />} />
               <Route path="login" element={<Login />} />

@@ -16,7 +16,6 @@ const handleAddMatch = async (event) => {
   event.preventDefault();
   const formdata = new FormData(event.target);
   const data = Object.fromEntries(formdata);
-  console.log(data);
 
   const fetchOptions = {
     method: 'POST',

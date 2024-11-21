@@ -42,8 +42,8 @@ const Layout = () => {
                         className="text-5xl text-slate-200 font-myFont mr-6">Welcome, {getUsername()}!</div>
                     <Link to="/"
                           className="text-5xl text-slate-200 font-myFont hover:underline">Home</Link>
-                    <Link to="/matches"
-                          className="text-5xl text-slate-200 font-myFont hover:underline">Matches</Link>
+                    <Link to="/leagues"
+                          className="text-5xl text-slate-200 font-myFont hover:underline">Leagues</Link>
                     <Link to="/leaderboard"
                           className="text-5xl text-slate-200 font-myFont hover:underline">Leaderboard</Link>
                     <Link to="/profile"

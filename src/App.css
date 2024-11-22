@@ -15,6 +15,13 @@
     width: 100%;
     margin: 0;
   }
+  .single-league-mobile {
+    flex-direction: column;
+    width: 90%;
+  }
+  .league-details-mobile {
+    width: 90%;
+  }
   .admin-mobile {
     display: flex;
     align-items: center;

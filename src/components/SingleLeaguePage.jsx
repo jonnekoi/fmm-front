@@ -40,8 +40,8 @@ const SingleLeaguePage = () => {
   }
 
   return (
-      <div className="flex justify-center m-5">
-        <div className="border p-5 m-5 w-1/3">
+      <div className="flex justify-center m-5 single-league-mobile">
+        <div className="border p-5 m-5 w-1/3 league-details-mobile">
           <h1 className="font-myFont text-6xl pb-10">League Details</h1>
           <h2 className="font-semibold text-3xl">League Name: {league.name}</h2>
           <p className="font-semibold text-3xl">Max Players: {league.league_users.length} / {league.maxPlayers}</p>

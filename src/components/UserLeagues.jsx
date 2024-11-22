@@ -20,7 +20,7 @@ const fetchLeagues = async (setLeagues) => {
 }
 
 
-const AllLeagues = () => {
+const UserLeagues = () => {
     const [leagues, setLeagues] = useState([]);
 
     useEffect(() => {
@@ -28,9 +28,9 @@ const AllLeagues = () => {
     }, []);
 
     return (
-        <div>
+        <div className="m-5">
             <h1 className="font-myFont text-6xl pb-5">Your Leagues</h1>
-            <table>
+            <table className="bg-slate-900">
               <thead>
               <tr>
                 <th className="p-2 border">League Name</th>
@@ -52,4 +52,4 @@ const AllLeagues = () => {
     );
 }
 
-export default AllLeagues;
+export default UserLeagues;

@@ -65,9 +65,9 @@ const ManageLeagues = () => {
   };
 
   return (
-      <div className="w-1/6">
+      <div className="m-5 w-1/3">
         <h1 className="font-myFont text-6xl pb-5">Create League</h1>
-        <form onSubmit={hanleAddLeague} className="flex flex-col m-auto w-3/4 border-b pb-10">
+        <form onSubmit={hanleAddLeague} className="flex bg-slate-900 border flex-col w-3/4 m-auto pb-10 p-5">
           <label>League Name:</label>
           <input className="m-2 bg-white rounded text-black p-1 text-center"
                  type="text" id="name" name="name"
@@ -89,6 +89,8 @@ const ManageLeagues = () => {
                        required></input>
               </div>
           )}
+          <label>Description</label>
+          <textarea name="desci" className="m-2 bg-white rounded text-black p-1 text-center"></textarea>
           <button
               className="text-5xl text-slate-200 font-myFont hover:underline"
               type="submit">Create League
@@ -98,7 +100,7 @@ const ManageLeagues = () => {
           )}
         </form>
         <h1 className="pt-10 font-myFont text-6xl pb-5">Join League</h1>
-        <form onSubmit={handleJoinLeague} className="flex flex-col m-auto w-3/4">
+        <form onSubmit={handleJoinLeague} className="flex bg-slate-900 border p-5 flex-col m-auto w-3/4">
           <label>League Code:</label>
           <input className="m-2 bg-white rounded text-black p-1 text-center"
                  type="text" id="leagueCode" name="leagueCode"

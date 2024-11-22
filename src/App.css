@@ -2,8 +2,6 @@
   text-align: center;
 }
 
-
-
 @media (max-width: 768px) {
   .matches-mobile {
     display: flex;
@@ -67,4 +65,9 @@
 
 .tableHover tr:hover {
   background-color: #323c54;
+}
+
+.info-icon:hover .tooltip-text {
+  display: block;
+  opacity: 1;
 }

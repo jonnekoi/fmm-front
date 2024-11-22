@@ -66,8 +66,8 @@ const Layout = () => {
             : 'hidden'}`}>
           <Link
               to="/"className="text-5xl text-slate-200 font-myFont">H o m e</Link>
-          <Link to="/matches"
-                className="text-5xl text-slate-200 font-myFont">M a t c h e s</Link>
+          <Link to="/leagues"
+                className="text-5xl text-slate-200 font-myFont">L e a g u e s</Link>
           <Link to="/leaderboard"
                 className="text-5xl text-slate-200 font-myFont hover:underline">L e a d e r b o a r d</Link>
           <Link to="/profile"

@@ -6,12 +6,32 @@ const fetchleagues = async (setLeagues) => {
     try {
         const response = await fetch(url + '/leagues/public');
         const responseData = await response.json();
-        console.log(responseData);
         setLeagues(responseData);
     } catch (error) {
         console.error('Error fetching leagues:', error);
     }
 }
+
+const addUserToPublicLeague = async (event, id) => {
+    event.preventDefault();
+
+    const fetchOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+        }
+    };
+
+    try {
+        const response = await fetch(url + `/leagues/add/${id}`, fetchOptions);
+        if (response.ok) {
+            location.reload();
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 const PublicLeagues = () => {
     const [leagues, setLeagues] = useState([]);
@@ -30,6 +50,7 @@ const PublicLeagues = () => {
                     <th className="p-2 border">Max Players</th>
                     <th className="p-2 border">Owner</th>
                     <th className="p-2 border">Info</th>
+                    <th className="p-2 border">Join</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -39,11 +60,17 @@ const PublicLeagues = () => {
                         <td className="p-2 border">{league.maxPlayers}</td>
                         <td className="p-2 border">{league.owner_username}</td>
                         <td className="p-2 border">
-                            <span className="info-icon cursor-pointer text-center p-2 relative">&#x2139;
-                                <span className="tooltip-text absolute hidden w-32 bg-gray-700 text-white text-center rounded-lg p-2 bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 transition-opacity duration-300">
+                            <span className="info-icon cursor-pointer text-center p-2 relative text-2xl">&#x2139;
+                                <span
+                                    className="text-sm tooltip-text absolute hidden w-32 bg-gray-700 text-white text-center rounded-lg p-2 bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 transition-opacity duration-300">
                                         {league.desci}
                                 </span>
                             </span>
+                        </td>
+                        <td className="p-2 border">
+                            <button className="text-2xl text-slate-200"
+                                    onClick={(e) => addUserToPublicLeague(e, league.id)}>Join
+                            </button>
                         </td>
                     </tr>
                 ))}

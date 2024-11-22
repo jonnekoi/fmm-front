@@ -6,7 +6,7 @@ import PublicLeagues from "./PublicLeagues.jsx";
 
 const LeaguePage = () => {
   return (
-      <div className="flex justify-center m-5">
+      <div className="flex justify-center m-5 leagues-mobile">
           <ManageLeagues></ManageLeagues>
           <UserLeagues></UserLeagues>
           <PublicLeagues></PublicLeagues>

@@ -65,7 +65,7 @@ const ManageLeagues = () => {
   };
 
   return (
-      <div className="m-5 w-1/3">
+      <div className="m-5 w-1/3 manage-leagues-mobile">
         <h1 className="font-myFont text-6xl pb-5">Create League</h1>
         <form onSubmit={hanleAddLeague} className="flex bg-slate-900 border flex-col w-3/4 m-auto pb-10 p-5">
           <label>League Name:</label>

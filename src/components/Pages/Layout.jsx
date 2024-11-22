@@ -1,7 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext.jsx';
-import HamburgerMenu from '../assets/hamburgerMenu.svg';
+import { useAuth } from '../../context/AuthContext.jsx';
+import HamburgerMenu from '../../assets/hamburgerMenu.svg';
 import {useState} from 'react';
 
 

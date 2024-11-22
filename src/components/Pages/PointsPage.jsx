@@ -1,4 +1,4 @@
-import Leaderboard from './Leaderboard.jsx';
+import Leaderboard from '../Leaderboard.jsx';
 
 const PointsPage = () => {
   return (

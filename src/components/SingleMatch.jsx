@@ -113,8 +113,6 @@ const SingleMatch = ({ matchId }) => {
   if (!match) {
     return <div></div>;
   }
-  const homeScore = match.home_score ? match.home_score : 0;
-  const awayScore = match.away_score ? match.away_score : 0;
   const matchTime = new Date(match.matchday);
   const currentTime = new Date();
   const timeDifference = differenceInMinutes(matchTime, currentTime);

@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 
 const url = 'http://127.0.0.1:3000/v1';
 
@@ -22,10 +23,15 @@ const fetchLeagues = async (setLeagues) => {
 
 const UserLeagues = () => {
     const [leagues, setLeagues] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchLeagues(setLeagues);
     }, []);
+
+    const handleRowClick = (leagueId) => {
+      navigate(`/league/${leagueId}`);
+    };
 
     return (
         <div className="m-5">
@@ -40,7 +46,8 @@ const UserLeagues = () => {
               </thead>
               <tbody>
               {leagues.map((league) => (
-                  <tr key={league.id}>
+                  <tr key={league.id} onClick={() => handleRowClick(league.id)}
+                      className="cursor-pointer">
                     <td className="p-2 border">{league.name}</td>
                     <td className="p-2 border">{league.maxPlayers}</td>
                     <td className="p-2 border">{league.owner_username}</td>

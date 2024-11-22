@@ -50,7 +50,7 @@ const PublicLeagues = () => {
                     <th className="p-2 border">Max Players</th>
                     <th className="p-2 border">Owner</th>
                     <th className="p-2 border">Info</th>
-                    <th className="p-2 border">Join</th>
+                    <th className="p-3 border">Join</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -67,9 +67,11 @@ const PublicLeagues = () => {
                                 </span>
                             </span>
                         </td>
-                        <td className="p-2 border">
-                            <button className="text-2xl text-slate-200"
-                                    onClick={(e) => addUserToPublicLeague(e, league.id)}>Join
+                        <td className="p-4 border hover:bg-white relative">
+                            <button
+                                className="absolute inset-0 text-2xl text-slate-200 hover:bg-white hover:text-black"
+                                onClick={(e) => addUserToPublicLeague(e,
+                                    league.id)}>Join
                             </button>
                         </td>
                     </tr>

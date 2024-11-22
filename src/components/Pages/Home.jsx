@@ -1,5 +1,5 @@
-import Leaderboard from './Leaderboard.jsx';
-import NextMatches from './NextMatches.jsx';
+import Leaderboard from '../Leaderboard.jsx';
+import NextMatches from '../NextMatches.jsx';
 
 const Home = () => {
   return (

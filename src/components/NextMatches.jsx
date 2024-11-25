@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 
 const url = 'http://127.0.0.1:3000/v1';
+
+// This renders table of next matches
 
 const fetchMatches = async (setMatches) => {
   try {

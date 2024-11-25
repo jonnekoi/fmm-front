@@ -1,5 +1,5 @@
-import Leaderboard from '../Leaderboard.jsx';
-
+import Leaderboard from '../../NO NEED/Leaderboard.jsx';
+// TODO: REMAKE THIS
 const PointsPage = () => {
   return (
       <>

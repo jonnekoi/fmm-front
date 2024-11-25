@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import MatchesTable from '../MatchesTable.jsx';
-import SingleMatch from '../SingleMatch.jsx';
+import MatchesTable from './MatchesTable.jsx';
+import SingleMatch from './SingleMatch.jsx';
 
 const Matches = () => {
   const [selectedMatchId, setSelectedMatchId] = useState(null);

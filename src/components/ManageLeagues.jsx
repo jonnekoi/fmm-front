@@ -2,12 +2,14 @@ import { useState } from 'react';
 
 const url = 'http://127.0.0.1:3000/v1';
 
+// This renders joining and creating leagues to LeaguePage
+
 const ManageLeagues = () => {
   const [isPublic, setIsPublic] = useState('true');
   const [errorMessage, setErrorMessage] = useState('');
   const [addErrorMessage, setAddErrorMessage] = useState('');
   const [showCreateLeague, setShowCreateLeague] = useState(false);
-  const [showJoinLeague, setShowJoinLeague] = useState(true); // Default to show Join League
+  const [showJoinLeague, setShowJoinLeague] = useState(true);
 
   const handleSelectChange = (event) => {
     setIsPublic(event.target.value);

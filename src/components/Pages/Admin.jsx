@@ -1,8 +1,8 @@
-import AddMatch from '../AddMatch.jsx';
-import Leaderboard from '../Leaderboard.jsx';
-import AdminMatchTable from '../AdminMatchTable.jsx';
-import AddTeam from '../addTeam.jsx';
-import AddPlayer from '../AddPlayer.jsx';
+import AddMatch from '../AdminPageComponents/AddMatch.jsx';
+import Leaderboard from '../../NO NEED/Leaderboard.jsx';
+import AdminMatchTable from '../AdminPageComponents/AdminMatchTable.jsx';
+import AddTeam from '../AdminPageComponents/addTeam.jsx';
+import AddPlayer from '../AdminPageComponents/AddPlayer.jsx';
 
 const Admin = () => {
   return (

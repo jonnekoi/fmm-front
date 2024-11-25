@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
 import UserLeagues from '../UserLeagues.jsx';
 import ManageLeagues from '../ManageLeagues.jsx';
 import PublicLeagues from "../PublicLeagues.jsx";

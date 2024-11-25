@@ -4,8 +4,6 @@ import { useAuth } from '../../context/AuthContext.jsx';
 import HamburgerMenu from '../../assets/hamburgerMenu.svg';
 import {useState} from 'react';
 
-
-
 const handleLogout = (navigate) => {
   sessionStorage.removeItem('token');
   sessionStorage.removeItem('username');

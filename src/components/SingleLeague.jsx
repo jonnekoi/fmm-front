@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import userLeagues from './UserLeagues.jsx';
+import {useNavigate, useParams} from 'react-router-dom';
 import {format} from 'date-fns';
 
 const url = 'http://127.0.0.1:3000/v1';
 
-const SingleLeaguePage = () => {
+const SingleLeague = () => {
   const { id: leagueId } = useParams();
   const [league, setLeague] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  const handleMatchclick = (matchId) => {
+    navigate(`/match/${matchId}`);
+  };
 
   useEffect(() => {
     const fetchLeague = async () => {
@@ -22,7 +26,6 @@ const SingleLeaguePage = () => {
       try {
         const response = await fetch(`${url}/leagues/info/${leagueId}`, fetchOption);
         const data = await response.json();
-        console.log(data)
         setTimeout(() => {
           setLeague(data);
           setLoading(false);
@@ -37,6 +40,10 @@ const SingleLeaguePage = () => {
 
   if (loading) {
     return <div className="font-myFont text-6xl">Loading...</div>;
+  }
+
+  if (!league || !league.league_matches) {
+    return <div className="font-myFont text-6xl">No league data available</div>;
   }
 
   return (
@@ -73,9 +80,8 @@ const SingleLeaguePage = () => {
               </thead>
               <tbody>
               {league.league_matches.map((match) => (
-                  <tr key={match.id} className="">
-                    <td className="p-2 border">{format(new Date(match.matchday),
-                        'yyyy-MM-dd HH:mm')}</td>
+                  <tr key={match.match_id} className="" onClick={() => handleMatchclick(match.match_id)}>
+                    <td className="p-2 border">{format(new Date(match.matchday), 'yyyy-MM-dd HH:mm')}</td>
                     <td className="border p-2">{match.home_team}</td>
                     <td className="border p-2">{match.away_team}</td>
                     <td className="border p-2">{match.home_score} - {match.away_score}</td>
@@ -89,4 +95,4 @@ const SingleLeaguePage = () => {
   );
 };
 
-export default SingleLeaguePage;
+export default SingleLeague;

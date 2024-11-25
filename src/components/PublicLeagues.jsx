@@ -2,6 +2,8 @@ import {useEffect, useState} from "react";
 
 const url = 'http://127.0.0.1:3000/v1';
 
+// This renders table of all public leagues
+
 const fetchleagues = async (setLeagues) => {
     try {
         const response = await fetch(url + '/leagues/public');

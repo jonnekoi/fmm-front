@@ -1,4 +1,4 @@
-import Leaderboard from '../Leaderboard.jsx';
+import Leaderboard from '../../NO NEED/Leaderboard.jsx';
 import NextMatches from '../NextMatches.jsx';
 
 const Home = () => {

@@ -3,6 +3,8 @@ import {useNavigate} from 'react-router-dom';
 
 const url = 'http://127.0.0.1:3000/v1';
 
+// This renders a table of all leagues the user is a member of
+
 const fetchLeagues = async (setLeagues) => {
   const fetchOption = {
     method: 'GET',

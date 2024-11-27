@@ -9,6 +9,13 @@ export default {
       fontFamily: {
         myFont: ['myFont', 'cursive'],
       },
+      colors: {
+        primary: '#3f455e',
+        secondary: '#d7d4d7',
+        third: '#8f2172',
+        fourth: '#c08b3f',
+        backcolor: '#020617',
+      },
     },
   },
   plugins: [],

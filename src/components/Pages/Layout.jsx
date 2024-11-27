@@ -27,9 +27,9 @@ const Layout = () => {
 
   return (
       <>
-        <header className="bg-slate-900 w-auto p-7 m-1 mx-auto border-b border-white flex items-center justify-between">
+        <header className="bg-backcolor sticky top-0 z-50 p-1 w-auto m-auto mx-auto flex items-center justify-between">
           <div className="text-3xl font-bold text-slate-200 ml-4">
-            <h1 className="font-myFont text-6xl">Etusivu</h1>
+            <h1 className="font-myFont text-6xl">Logo Here</h1>
           </div>
           <div className="">
             {isLoggedIn ? (
@@ -39,27 +39,27 @@ const Layout = () => {
                     <div
                         className="text-5xl text-slate-200 font-myFont mr-6">Welcome, {getUsername()}!</div>
                     <Link to="/"
-                          className="text-5xl text-slate-200 font-myFont hover:underline">Home</Link>
+                          className="text-5xl text-slate-200 font-myFont">Home</Link>
                     <Link to="/leagues"
-                          className="text-5xl text-slate-200 font-myFont hover:underline">Leagues</Link>
+                          className="text-5xl text-slate-200 font-myFont">Leagues</Link>
                     <Link to="/leaderboard"
-                          className="text-5xl text-slate-200 font-myFont hover:underline">Leaderboard</Link>
+                          className="text-5xl text-slate-200 font-myFont">Leaderboard</Link>
                     <Link to="/profile"
-                          className="text-5xl text-slate-200 font-myFont hover:underline">Account</Link>
+                          className="text-5xl text-slate-200 font-myFont">Account</Link>
                     <button onClick={(e) => handleLogout(navigate)}
-                            className="text-5xl text-slate-200 font-myFont hover:underline">Logout
+                            className="text-5xl text-slate-200 font-myFont ">Logout
                     </button>
                   </div>
                 </>
             ) : (
-                <div className="space-x-7">
-                  <Link to="/login" className="text-5xl text-slate-200 font-myFont hover:underline">Login</Link>
-                  <Link to="/register" className="text-5xl text-slate-200 font-myFont hover:underline">Register</Link>
+                <div className="space-x-7 mr-5">
+                  <Link to="/login" className="text-5xl text-slate-200 font-myFont">Login</Link>
+                  <Link to="/register" className="text-5xl text-slate-200 font-myFont">Register</Link>
                 </div>
             )}
           </div>
         </header>
-        <div className={`flex flex-col m-5 border-b ${hamburgerMenu
+        <div className={`flex flex-col m-5 ${hamburgerMenu
             ? 'block'
             : 'hidden'}`}>
           <Link
@@ -67,16 +67,19 @@ const Layout = () => {
           <Link to="/leagues"
                 className="text-5xl text-slate-200 font-myFont">L e a g u e s</Link>
           <Link to="/leaderboard"
-                className="text-5xl text-slate-200 font-myFont hover:underline">L e a d e r b o a r d</Link>
+                className="text-5xl text-slate-200 font-myFont">L e a d e r b o a r d</Link>
           <Link to="/profile"
                 className="text-5xl text-slate-200 font-myFont">A c c o u n t</Link>
           <button onClick={(e) => handleLogout(navigate)}
-                  className="text-5xl text-slate-200 font-myFont hover:underline mb-5">L o g o u t
+                  className="text-5xl text-slate-200 font-myFont mb-5">L o g o u t
           </button>
         </div>
         <main>
-          <Outlet/>
+          <div className="bg-primary h-dvh mr-40 ml-40 mt-10 mb-10 rounded-3xl main-outlet-mobile">
+            <Outlet/>
+          </div>
         </main>
+        <footer className="p-1 w-auto m-auto flex items-center justify-center text-2xl">©</footer>
       </>
   );
 };

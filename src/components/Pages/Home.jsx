@@ -1,11 +1,9 @@
-import Leaderboard from '../../NO NEED/Leaderboard.jsx';
-import NextMatches from '../NextMatches.jsx';
+import HomePageIcons from '../HomePageIcons.jsx';
 
 const Home = () => {
   return (
-      <div className="flex justify-center m-5 matches-mobile">
-        <NextMatches></NextMatches>
-        <Leaderboard></Leaderboard>
+      <div className="flex justify-center matches-mobile">
+        <HomePageIcons/>
       </div>
   );
 }

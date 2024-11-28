@@ -55,26 +55,23 @@ const Register = () => {
 
 
   return (
-      <div className="bg-slate-900 w-1/5 m-auto mt-10 p-5 rounded border register-component">
-        <form className="flex flex-col m-auto w-3/4"
+      <div
+          className="bg-slate-900 w-1/4 m-auto mt-10 p-5  register-component">
+        <h1 className="font-myFont text-6xl text-center">Register</h1>
+        <form className="flex flex-col items-center m-auto w-3/4"
               onSubmit={(e) => handleSubmit(e, setError, navigate,
                   setIsLoggedIn)}>
-          <label className="font-myFont text-3xl">Name</label>
-          <input className="m-2 bg-white rounded text-black" type="text"
-                 name="name"/>
-          <label className="font-myFont text-3xl">Username</label>
-          <input className="m-2 bg-white rounded text-black" type="text"
-                 name="username"/>
-          <label className="font-myFont text-3xl">Password</label>
-          <input className="m-2 bg-white rounded text-black" type="password"
-                 name="password"/>
-          <label className="font-myFont text-3xl">Confirm Password</label>
-          <input className="m-2 bg-white rounded text-black" type="password"
-                 name="confirmPassword"/>
-          <label className="font-myFont text-3xl">Email</label>
-          <input className="m-2 bg-white rounded text-black" type="text"
-                 name="email"/>
-          <button className="font-myFont text-5xl hover:underline"
+          <input className="form-input" type="text"
+                 name="name" placeholder="Enter your name..."/>
+          <input className="form-input" type="text"
+                 name="username" placeholder="Choose your username"/>
+          <input className="form-input" type="password"
+                 name="password" placeholder="Enter your password..."/>
+          <input className="form-input" type="password"
+                 name="confirmPassword" placeholder="Repeat your password..."/>
+          <input className="form-input" type="text"
+                 name="email" placeholder="Enter your email..."/>
+          <button className="form-button mt-5"
                   type="submit">Register
           </button>
           {error &&

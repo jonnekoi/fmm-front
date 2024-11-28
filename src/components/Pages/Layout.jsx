@@ -74,12 +74,14 @@ const Layout = () => {
                   className="text-5xl text-slate-200 font-myFont mb-5">L o g o u t
           </button>
         </div>
-        <main>
-          <div className="bg-primary h-dvh mr-40 ml-40 mt-10 mb-10 rounded-3xl main-outlet-mobile">
+        <main className="main-wrapper ">
+          <div className="content-container">
             <Outlet/>
           </div>
         </main>
-        <footer className="p-1 w-auto m-auto flex items-center justify-center text-2xl">©</footer>
+        <footer
+            className="p-1 w-auto m-auto flex items-center justify-center text-2xl">©
+        </footer>
       </>
   );
 };

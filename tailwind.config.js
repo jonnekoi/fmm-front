@@ -15,6 +15,7 @@ export default {
         third: '#8f2172',
         fourth: '#c08b3f',
         backcolor: '#020617',
+        buttonColor: '#0f172a',
       },
     },
   },

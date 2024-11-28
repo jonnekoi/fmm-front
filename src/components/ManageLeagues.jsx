@@ -9,7 +9,8 @@ const ManageLeagues = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [addErrorMessage, setAddErrorMessage] = useState('');
   const [showCreateLeague, setShowCreateLeague] = useState(false);
-  const [showJoinLeague, setShowJoinLeague] = useState(true);
+  const [showJoinLeague, setShowJoinLeague] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
 
   const handleSelectChange = (event) => {
     setIsPublic(event.target.value);
@@ -69,128 +70,123 @@ const ManageLeagues = () => {
   };
 
   return (
-      <div className="m-5 w-1/3 manage-leagues-mobile">
-        {/* Toggle visibility of Join League form */}
-        <h1
-            className="font-myFont text-6xl pb-5 cursor-pointer"
-            onClick={() => {
-              setShowJoinLeague(true);
-              setShowCreateLeague(false); // Close Create League when Join League is opened
-            }}
-        >
-          Join League
-        </h1>
-        {showJoinLeague && (
-            <form
-                onSubmit={handleJoinLeague}
-                className="flex bg-slate-900 border p-5 flex-col m-auto w-3/4"
-            >
-              <label>League Code:</label>
-              <input
-                  className="m-2 bg-white rounded text-black p-1 text-center"
-                  type="text"
-                  id="leagueCode"
-                  name="leagueCode"
-                  required
-              />
-              <button
-                  className="text-5xl text-slate-200 font-myFont hover:underline"
-                  type="submit"
-              >
-                Join League
-              </button>
-              {errorMessage && (
-                  <p className="p-2 font-myFont text-3xl text-red-500">
-                    {errorMessage}
-                  </p>
-              )}
-            </form>
-        )}
+      <div className="m-5 w-1/3 manage-leagues-mobile flex flex-col items-center">
+        <div className="justify-around mb-5 flex w-full flex-col items-center">
+          <button className="button bg-buttonColor m-2" onClick={() => {
+            setShowAbout((prevState) => !prevState);
+            setShowCreateLeague(false);
+            setShowJoinLeague(false);
+          }}>About Leagues
+          </button>
+          <button className="button bg-buttonColor m-2" onClick={() => {
+            setShowJoinLeague((prevState) => !prevState);
+            setShowCreateLeague(false);
+            setShowAbout(false);
+          }}
+          >
+            Join League
+          </button>
+          <button className="button bg-buttonColor m-2" onClick={() => {
+            setShowCreateLeague((prevState) => !prevState);
+            setShowJoinLeague(false);
+            setShowAbout(false);
+          }}
+          >
+            Create League
+          </button>
+        </div>
 
-        {/* Toggle visibility of Create League form */}
-        <h1
-            className="pt-10 font-myFont text-6xl pb-5 cursor-pointer"
-            onClick={() => {
-              setShowCreateLeague(true);
-              setShowJoinLeague(false); // Close Join League when Create League is opened
-            }}
-        >
-          Create League
-        </h1>
-        {showCreateLeague && (
-            <form
-                onSubmit={handleAddLeague}
-                className="flex bg-slate-900 border flex-col w-3/4 m-auto pb-10 p-5"
-            >
-              <label>League Name:</label>
-              <input
-                  className="m-2 bg-white rounded text-black p-1 text-center"
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-              />
-              <label>Max Players:</label>
-              <input
-                  className="m-2 bg-white rounded text-black p-1 text-center"
-                  type="number"
-                  id="maxPlayers"
-                  name="maxPlayers"
-                  required
-                  max="60"
-              />
-              <label>League Duration</label>
-              <select
-                  name="duration"
-                  id="duration"
-                  className="m-2 bg-white rounded text-black p-1 text-center"
+        <div className="w-full">
+          {showAbout && (
+              <div>About Leagues text comes Here</div>
+          )}
+          {showJoinLeague && (
+              <form onSubmit={handleJoinLeague} className="flex bg-slate-900 p-5 flex-col m-auto items-center w-3/4 manage-leagues">
+                <input className="form-input" type="text" id="leagueCode" name="leagueCode" required placeholder="Enter league code..."/>
+                <button className="button" type="submit">
+                  Join League
+                </button>
+                {errorMessage && (
+                    <p className="p-2 font-myFont text-3xl text-red-500">
+                      {errorMessage}
+                    </p>
+                )}
+              </form>
+          )}
+
+          {showCreateLeague && (
+              <form
+                  onSubmit={handleAddLeague}
+                  className="flex items-center bg-slate-900 flex-col w-3/4 m-auto p-5 manage-leagues "
               >
-                <option value="7">7 days</option>
-                <option value="30">30 days</option>
-                <option value="60">60 days</option>
-                <option value="120">120 days</option>
-                <option value="365">365 days</option>
-              </select>
-              <label>Public league?</label>
-              <select
-                  name="isPublic"
-                  id="isPublic"
-                  className="m-2 bg-white rounded text-black p-1 text-center"
-                  onChange={handleSelectChange}
-              >
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
-              {isPublic === 'false' && (
-                  <div>
-                    <label htmlFor="leagueKey">Select league key:</label>
-                    <input
-                        className="m-2 bg-white rounded text-black p-1 text-center"
-                        type="text"
-                        id="leagueKey"
-                        name="leagueKey"
-                        required
-                    />
-                  </div>
-              )}
-              <label>Description</label>
-              <textarea
-                  name="desci"
-                  className="m-2 bg-white rounded text-black p-1 text-center"
-              ></textarea>
-              <button
-                  className="text-5xl text-slate-200 font-myFont hover:underline"
-                  type="submit"
-              >
-                Create League
-              </button>
-              {addErrorMessage && (
-                  <p className="p-2 font-myFont text-3xl text-red-500">
-                    {addErrorMessage}
-                  </p>
-              )}
-            </form>
-        )}
+                <input
+                    className="form-input"
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Enter league name..."
+                />
+                <input
+                    className="form-input"
+                    type="number"
+                    id="maxPlayers"
+                    name="maxPlayers"
+                    required
+                    max="60"
+                    placeholder="Max players..."
+                />
+                <label className="poppins-font">Duration</label>
+                <select
+                    name="duration"
+                    id="duration"
+                    className="form-input"
+                    aria-placeholder=""
+                >
+                  <option value="7">7 days</option>
+                  <option value="30">30 days</option>
+                  <option value="60">60 days</option>
+                  <option value="120">120 days</option>
+                  <option value="365">365 days</option>
+                </select>
+                <label className="poppins-font">Public league?</label>
+                <select
+                    name="isPublic"
+                    id="isPublic"
+                    className="form-input"
+                    onChange={handleSelectChange}
+                >
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+                {isPublic === 'false' && (
+                    <div>
+                      <input
+                          className="form-input"
+                          type="text"
+                          id="leagueKey"
+                          name="leagueKey"
+                          required
+                          placeholder="Choose league access key..."
+                      />
+                    </div>
+                )}
+                <textarea
+                    name="desci"
+                    className="form-input"
+                    placeholder="League description..."
+                ></textarea>
+                <button className="button" type="submit">
+                  Create League
+                </button>
+                {addErrorMessage && (
+                    <p className="p-2 font-myFont text-3xl text-red-500">
+                      {addErrorMessage}
+                    </p>
+                )}
+              </form>
+          )}
+        </div>
       </div>
   );
 };

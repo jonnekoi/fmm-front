@@ -63,15 +63,16 @@ const Login = () => {
 
 
   return (
-      <div className="bg-slate-900 w-1/5 m-auto border mt-10 p-5 rounded login-component">
-        <form className="flex flex-col m-auto w-3/4" onSubmit={(e) => handleLogin(e, setError, navigate, setIsLoggedIn)}>
-          <label className="font-myFont text-3xl">Username</label>
-          <input className="m-2 bg-white rounded text-black" type="text" name="username"/>
-          <label className="font-myFont text-3xl">Password</label>
-          <input className="m-2 bg-white rounded text-black" type="password" name="password"/>
-          <button className="font-myFont text-5xl hover:underline" type="submit">Login</button>{error &&
-        <p className="text-red-600 font-myFont text-3xl p-1">{error}</p>}
-        </form>
+      <div className="m-10">
+        <div className="bg-slate-900 w-1/4 m-auto p-5 rounded login-component">
+          <h1 className="font-myFont text-6xl text-center">Login</h1>
+          <form className="flex flex-col items-center m-auto w-3/4" onSubmit={(e) => handleLogin(e, setError, navigate, setIsLoggedIn)}>
+            <input className="form-input" type="text" name="username" placeholder="Enter your username..."/>
+            <input className="form-input" type="password" name="password" placeholder="Enter your password..."/>
+            <button className="form-button mt-5" type="submit">Login</button>{error &&
+          <p className="text-red-600 font-myFont text-3xl p-1">{error}</p>}
+          </form>
+        </div>
       </div>
   );
 };

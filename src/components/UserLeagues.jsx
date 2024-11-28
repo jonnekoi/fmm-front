@@ -36,27 +36,28 @@ const UserLeagues = () => {
     };
 
     return (
-        <div className="m-5">
+        <div className="m-5 bg-slate-900 your-leagues">
             <h1 className="font-myFont text-6xl pb-5">Your Leagues</h1>
-            <table className="bg-slate-900">
-              <thead>
-              <tr>
-                <th className="p-2 border">League Name</th>
-                <th className="p-2 border">Max Players</th>
-                <th className="p-2 border">Owner</th>
-              </tr>
-              </thead>
-              <tbody>
-              {leagues.map((league) => (
-                  <tr key={league.id} onClick={() => handleRowClick(league.id)}
-                      className="cursor-pointer">
-                    <td className="p-2 border">{league.name}</td>
-                    <td className="p-2 border">{league.maxPlayers}</td>
-                    <td className="p-2 border">{league.owner_username}</td>
-                  </tr>
-              ))}
-              </tbody>
-            </table>
+          <table className="bg-slate-900 your-leagues">
+            <thead>
+            <tr>
+              <th className="p-3 poppins-font border-b border-white">League Name</th>
+              <th className="p-3 poppins-font border-b border-white">Max Players</th>
+              <th className="p-3 poppins-font border-b border-white">Owner</th>
+            </tr>
+            </thead>
+            <tbody>
+            {leagues.map((league) => (
+                <tr key={league.id}
+                    onClick={() => handleRowClick(league.id)}
+                    className="cursor-pointer tr-alin">
+                  <td className="p-3 poppins-font border-b border-white">{league.name}</td>
+                  <td className="p-3 poppins-font border-b border-white">{league.maxPlayers}</td>
+                  <td className="p-3 poppins-font border-b border-white">{league.owner_username}</td>
+                </tr>
+            ))}
+            </tbody>
+          </table>
         </div>
     );
 }

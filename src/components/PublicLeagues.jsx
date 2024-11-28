@@ -43,39 +43,22 @@ const PublicLeagues = () => {
     }, []);
 
     return (
-        <div className="m-5">
+        <div className="m-5 bg-slate-900 your-leagues">
             <h1 className="font-myFont text-6xl pb-5">Public Leagues</h1>
-            <table className="bg-slate-900">
+            <table className="bg-slate-900 your-leagues">
                 <thead>
                 <tr>
-                    <th className="p-2 border">League Name</th>
-                    <th className="p-2 border">Max Players</th>
-                    <th className="p-2 border">Owner</th>
-                    <th className="p-2 border">Info</th>
-                    <th className="p-3 border">Join</th>
+                    <th className="p-3 poppins-font border-b border-white">League Name</th>
+                    <th className="p-3 poppins-font border-b border-white">Max Players</th>
+                    <th className="p-3 poppins-font border-b border-white">Owner</th>
                 </tr>
                 </thead>
                 <tbody>
                 {leagues.map((league) => (
-                    <tr key={league.id}>
-                        <td className="p-2 border">{league.name}</td>
-                        <td className="p-2 border">{league.maxPlayers}</td>
-                        <td className="p-2 border">{league.owner_username}</td>
-                        <td className="p-2 border">
-                            <span className="info-icon cursor-pointer text-center p-2 relative text-2xl">&#x2139;
-                                <span
-                                    className="text-sm tooltip-text absolute hidden w-32 bg-gray-700 text-white text-center rounded-lg p-2 bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 transition-opacity duration-300">
-                                        {league.desci}
-                                </span>
-                            </span>
-                        </td>
-                        <td className="p-4 border hover:bg-white relative">
-                            <button
-                                className="absolute inset-0 text-2xl text-slate-200 hover:bg-white hover:text-black"
-                                onClick={(e) => addUserToPublicLeague(e,
-                                    league.id)}>Join
-                            </button>
-                        </td>
+                    <tr key={league.id} className="cursor-pointer tr-alin">
+                        <td className="p-3 poppins-font border-b border-white">{league.name}</td>
+                        <td className="p-3 poppins-font border-b border-white">{league.maxPlayers}</td>
+                        <td className="p-3 poppins-font border-b border-white">{league.owner_username}</td>
                     </tr>
                 ))}
                 </tbody>

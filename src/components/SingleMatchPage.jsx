@@ -45,7 +45,7 @@ const SingleMatchPage = () => {
           <tbody>
           {match && (
             <tr key={match.id}>
-              <td>{format(new Date(match.matchday), 'yyyy-MM-dd HH:mm')}</td>
+              <td>{format(new Date(match.matchday), 'dd/MM/yyyy HH:mm')}</td>
               <td>{match.home_team}</td>
               <td>{match.away_team}</td>
               <td>{match.home_score} - {match.away_score}</td>

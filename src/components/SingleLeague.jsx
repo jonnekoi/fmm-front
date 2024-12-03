@@ -48,8 +48,8 @@ const SingleLeague = () => {
 
   return (
       <div
-          className="flex flex-col md:flex-row justify-center m-5 single-league-mobile">
-        <div className="m-5 bg-slate-900 p-5 single-league-components">
+          className="grid grid-rows-3 grid-flow-col justify-center m-5 single-league-mobile">
+        <div className="row-span-3 m-5 bg-slate-900 p-5 single-league-components">
           <h1 className="font-myFont text-6xl pb-10">League Details</h1>
           <h2 className="font-semibold text-3xl">League Name: {league.name}</h2>
           <p className="font-semibold text-3xl">Max
@@ -57,7 +57,7 @@ const SingleLeague = () => {
           <p className="font-semibold text-3xl">Owner: {league.owner_username}</p>
           <p className="text-1xl p-5">{league.desci}</p>
         </div>
-        <div className="m-5 p-5 bg-slate-900 single-league-components">
+        <div className="col-span-2 m-5 p-5 bg-slate-900 single-league-components">
           <h1 className="font-myFont text-6xl pb-10">Users and Points</h1>
           {league.league_users.map((user) => (
               <div key={user.id} className="font-semibold text-3xl">
@@ -66,7 +66,7 @@ const SingleLeague = () => {
               </div>
           ))}
         </div>
-        <div className="m-5 p-5 bg-slate-900 single-league-components ">
+        <div className="row-span-2 col-span-2 m-5 p-5 bg-slate-900 single-league-components ">
           <h1 className="font-myFont text-6xl pb-5">League Matches</h1>
           <table className="single-league-mobile-table">
             <thead>
@@ -84,7 +84,7 @@ const SingleLeague = () => {
                 <tr key={match.match_id} className="cursor-pointer tr-alin"
                     onClick={() => handleMatchclick(match.match_id)}>
                   <td className="p-3 poppins-font border-b border-white">{format(
-                      new Date(match.matchday), 'yyyy-MM-dd HH:mm')}</td>
+                      new Date(match.matchday), 'dd/MM/yyyy HH:mm')}</td>
                   <td className="p-3 poppins-font border-b border-white">{match.home_team}</td>
                   <td className="p-3 poppins-font border-b border-white">{match.away_team}</td>
                   <td className="p-3 poppins-font border-b border-white">{match.home_score} - {match.away_score}</td>

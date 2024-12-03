@@ -11,6 +11,8 @@ import MatchPage from './components/Pages/MatchPage.jsx';
 import SingleLeaguePage from './components/Pages/SingleLeaguePage.jsx';
 import LoginPage from './components/Pages/LoginPage.jsx';
 import ProfilePage from './components/Pages/ProfilePage.jsx';
+import SingleLeaguePagePublic
+  from './components/Pages/SingleLeaguePagePublic.jsx';
 
 const App = () => {
   return (
@@ -26,6 +28,7 @@ const App = () => {
               <Route path="profile" element={<ProfilePage />} />
               <Route path="/admin" element={<Admin/>} />
               <Route path="/league/:id" element={<SingleLeaguePage />} />
+              <Route path="/league/public/:id" element={<SingleLeaguePagePublic />} />
               <Route path="/match/:id" element={<MatchPage />} />
             </Route>
           </Routes>

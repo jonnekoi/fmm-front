@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
+import ReactMarkdown from 'react-markdown';
 
 const url = 'http://127.0.0.1:3000/v1';
 
@@ -11,6 +12,21 @@ const ManageLeagues = () => {
   const [showCreateLeague, setShowCreateLeague] = useState(false);
   const [showJoinLeague, setShowJoinLeague] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
+  const [markdownContent, setMarkdownContent] = useState('');
+
+  useEffect(() => {
+    const fetchMarkdownContent = async () => {
+      try {
+        const response = await fetch('/src/assets/content.md');
+        const text = await response.text();
+        setMarkdownContent(text);
+      } catch (error) {
+        console.error('Error loading markdown file:', error);
+      }
+    };
+
+    fetchMarkdownContent();
+  }, []);
 
   const handleSelectChange = (event) => {
     setIsPublic(event.target.value);
@@ -98,7 +114,13 @@ const ManageLeagues = () => {
 
         <div className="w-full">
           {showAbout && (
-              <div>About Leagues text comes Here</div>
+              <div className="p-5 bg-slate-900 manage-leagues text-white overflow-auto max-h-96">
+                {markdownContent ? (
+                    <ReactMarkdown>{markdownContent}</ReactMarkdown>
+                ) : (
+                    <p>Loading markdown content...</p>
+                )}
+              </div>
           )}
           {showJoinLeague && (
               <form onSubmit={handleJoinLeague} className="flex bg-slate-900 p-5 flex-col m-auto items-center w-3/4 manage-leagues">

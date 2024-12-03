@@ -44,7 +44,7 @@ const NextMatches = () => {
             <tbody>
             {sortedMatches.map((match, index) => (
                 <tr key={index}>
-                  <td className="p-2 border">{format(new Date(match.matchday), 'yyyy-MM-dd HH:mm')}</td>
+                  <td className="p-2 border">{format(new Date(match.matchday), 'dd/MM/yyyy HH:mm')}</td>
                   <td className="p-2 border">{match.home_team}</td>
                   <td className="p-2 border">{match.away_team}</td>
                   <td className="p-2 border">{match.home_score} - {match.away_score}</td>

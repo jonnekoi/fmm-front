@@ -4,13 +4,13 @@ import Layout from './components/Pages/Layout.jsx';
 import Home from './components/Pages/Home.jsx';
 import Register from './components/LoginRegisterComponents/Register.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
-import Profile from './components/LoginRegisterComponents/Profile.jsx';
 import PointsPage from './components/Pages/PointsPage.jsx';
 import Admin from './components/Pages/Admin.jsx';
 import LeaguePage from './components/Pages/LeaguePage.jsx';
 import MatchPage from './components/Pages/MatchPage.jsx';
 import SingleLeaguePage from './components/Pages/SingleLeaguePage.jsx';
 import LoginPage from './components/Pages/LoginPage.jsx';
+import ProfilePage from './components/Pages/ProfilePage.jsx';
 
 const App = () => {
   return (
@@ -23,7 +23,7 @@ const App = () => {
               <Route path="leaderboard" element={<PointsPage />} />
               <Route path="login" element={<LoginPage />} />
               <Route path="register" element={<Register />} />
-              <Route path="profile" element={<Profile />} />
+              <Route path="profile" element={<ProfilePage />} />
               <Route path="/admin" element={<Admin/>} />
               <Route path="/league/:id" element={<SingleLeaguePage />} />
               <Route path="/match/:id" element={<MatchPage />} />

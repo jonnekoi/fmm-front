@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import {format} from 'date-fns';
 
@@ -47,49 +47,51 @@ const SingleLeague = () => {
   }
 
   return (
-      <div className="flex justify-center m-5 single-league-mobile">
-        <div className="border p-5 m-5 w-1/3 league-details-mobile">
+      <div
+          className="flex flex-col md:flex-row justify-center m-5 single-league-mobile">
+        <div className="m-5 bg-slate-900 p-5 single-league-components">
           <h1 className="font-myFont text-6xl pb-10">League Details</h1>
           <h2 className="font-semibold text-3xl">League Name: {league.name}</h2>
-          <p className="font-semibold text-3xl">Max Players: {league.league_users.length} / {league.maxPlayers}</p>
+          <p className="font-semibold text-3xl">Max
+            Players: {league.league_users.length} / {league.maxPlayers}</p>
           <p className="font-semibold text-3xl">Owner: {league.owner_username}</p>
           <p className="text-1xl p-5">{league.desci}</p>
         </div>
-        <div className="">
-          <div className="border m-5 p-5">
-            <h1 className="font-myFont text-6xl pb-10">Users and Points</h1>
-            {league.league_users.map((user) => (
-                <div key={user.id} className="font-semibold text-3xl">
-                  <span className="font-semibold">{user.name}    </span>
-                  <span className="font-mono">{user.points}</span>
-                </div>
-            ))}
-          </div>
+        <div className="m-5 p-5 bg-slate-900 single-league-components">
+          <h1 className="font-myFont text-6xl pb-10">Users and Points</h1>
+          {league.league_users.map((user) => (
+              <div key={user.id} className="font-semibold text-3xl">
+                <span className="font-semibold">{user.name}    </span>
+                <span className="font-mono">{user.points}</span>
+              </div>
+          ))}
         </div>
-        <div className="">
-          <div className="border m-5 p-5">
-            <h1 className="font-myFont text-6xl pb-10">League Matches</h1>
-            <table className="w-full border-collapse">
-              <thead>
-              <tr>
-                <th className="border p-2">Date</th>
-                <th className="border p-2">Home Team</th>
-                <th className="border p-2">Away Team</th>
-                <th className="border p-2">Score</th>
-              </tr>
-              </thead>
-              <tbody>
-              {league.league_matches.map((match) => (
-                  <tr key={match.match_id} className="" onClick={() => handleMatchclick(match.match_id)}>
-                    <td className="p-2 border">{format(new Date(match.matchday), 'yyyy-MM-dd HH:mm')}</td>
-                    <td className="border p-2">{match.home_team}</td>
-                    <td className="border p-2">{match.away_team}</td>
-                    <td className="border p-2">{match.home_score} - {match.away_score}</td>
-                  </tr>
-              ))}
-              </tbody>
-            </table>
-          </div>
+        <div className="m-5 p-5 bg-slate-900 single-league-components ">
+          <h1 className="font-myFont text-6xl pb-5">League Matches</h1>
+          <table className="single-league-mobile-table">
+            <thead>
+            <tr>
+              <th className="p-3 poppins-font border-b border-white">Date</th>
+              <th className="p-3 poppins-font border-b border-white">Home Team
+              </th>
+              <th className="p-3 poppins-font border-b border-white">Away Team
+              </th>
+              <th className="p-3 poppins-font border-b border-white">Score</th>
+            </tr>
+            </thead>
+            <tbody>
+            {league.league_matches.map((match) => (
+                <tr key={match.match_id} className="cursor-pointer tr-alin"
+                    onClick={() => handleMatchclick(match.match_id)}>
+                  <td className="p-3 poppins-font border-b border-white">{format(
+                      new Date(match.matchday), 'yyyy-MM-dd HH:mm')}</td>
+                  <td className="p-3 poppins-font border-b border-white">{match.home_team}</td>
+                  <td className="p-3 poppins-font border-b border-white">{match.away_team}</td>
+                  <td className="p-3 poppins-font border-b border-white">{match.home_score} - {match.away_score}</td>
+                </tr>
+            ))}
+            </tbody>
+          </table>
         </div>
       </div>
   );

@@ -79,9 +79,6 @@ const Layout = () => {
             <Outlet/>
           </div>
         </main>
-        <footer
-            className="p-1 w-auto m-auto flex items-center justify-center text-2xl">©
-        </footer>
       </>
   );
 };

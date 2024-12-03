@@ -31,10 +31,10 @@
   }
   .single-league-mobile {
     flex-direction: column;
-    width: 90%;
+    width: 100%;
   }
   .league-details-mobile {
-    width: 90%;
+    width: 100%;
   }
   .admin-mobile {
     display: flex;
@@ -97,6 +97,17 @@
     width: 100%;
     margin: 0;
   }
+  .profile-pic-mobile {
+    width: 9rem;
+    height: auto;
+  }
+  .content-container {
+    min-height: 100vh;
+    overflow: auto;
+  }
+  .single-league-mobile-table {
+    width: 10%;
+  }
 }
 
 .tableHover tr:hover {
@@ -106,23 +117,6 @@
 .info-icon:hover .tooltip-text {
   display: block;
   opacity: 1;
-}
-
-.btn {
-  -webkit-border-radius: 12;
-  -moz-border-radius: 12;
-  border-radius: 12px;
-  font-family: Poppins, sans-serif;
-  color: #ffffff;
-  font-size: 20px;
-  background: #c08b3f;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background: #9e7842;
-  text-decoration: none;
 }
 
 .main-wrapper {
@@ -160,7 +154,7 @@
   border-radius: 1rem;
 }
 
-.login-component, .register-component, .manage-leagues, .your-leagues {
+.login-component, .register-component, .manage-leagues, .your-leagues, .profile-component, .single-league-components {
   border-radius: 1rem;
 }
 
@@ -179,4 +173,16 @@
 
 .tr-alin:last-child td {
   border-bottom: none;
+}
+
+.single-league-mobile-table {
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.single-league-mobile-table th,
+.single-league-mobile-table td {
+  text-align: left;
+  padding: 8px;
 }

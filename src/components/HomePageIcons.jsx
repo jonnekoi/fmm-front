@@ -13,6 +13,10 @@ const HomePageIcons = () => {
         <img src={Account} width="150" height="150" alt="Account"
              className="m-5"/>
         </Link>
+        <Link to="/profile">
+          <img src={Account} width="150" height="150" alt="Account"
+               className="m-5"/>
+        </Link>
       </div>
   );
 }

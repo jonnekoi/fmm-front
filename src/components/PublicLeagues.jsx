@@ -35,9 +35,9 @@ const PublicLeagues = () => {
     };
 
     return (
-        <div className="m-5 bg-slate-900 your-leagues">
-            <h1 className="font-myFont text-6xl pb-5">Public Leagues</h1>
-            <table className="bg-slate-900 your-leagues">
+        <div className="m-5 bg-slate-900 next-matches-table">
+            <h1 className="font-myFont text-6xl pb-5 ">Public Leagues</h1>
+            <table className="">
                 <thead>
                 <tr>
                     <th className="p-3 poppins-font border-b border-white">League Name</th>

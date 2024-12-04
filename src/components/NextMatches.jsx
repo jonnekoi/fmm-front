@@ -29,30 +29,28 @@ const NextMatches = () => {
   .slice(0, 5);
 
   return (
-      <div className="w-2/6 flex flex-col m-3 matches-mobile-table">
+      <div className="flex flex-col m-3 bg-slate-900 next-matches-table">
         <h1 className="font-myFont text-6xl">Next 5 matches</h1>
-        <div className="bg-slate-900 m-auto w-full border mt-5 rounded">
           <table className="w-full">
             <thead>
             <tr>
-              <th className="p-2 border">Match Date</th>
-              <th className="p-2 border">Home</th>
-              <th className="p-2 border">Away</th>
-              <th className="p-2 border">Score</th>
+              <th className="p-3 poppins-font border-b border-white">Match Date</th>
+              <th className="p-3 poppins-font border-b border-white">Home</th>
+              <th className="p-3 poppins-font border-b border-white">Away</th>
+              <th className="p-3 poppins-font border-b border-white">Score</th>
             </tr>
             </thead>
             <tbody>
             {sortedMatches.map((match, index) => (
-                <tr key={index}>
-                  <td className="p-2 border">{format(new Date(match.matchday), 'dd/MM/yyyy HH:mm')}</td>
-                  <td className="p-2 border">{match.home_team}</td>
-                  <td className="p-2 border">{match.away_team}</td>
-                  <td className="p-2 border">{match.home_score} - {match.away_score}</td>
+                <tr key={index} className="cursor-pointer tr-alin">
+                  <td className="p-3 poppins-font border-b border-white">{format(new Date(match.matchday), 'dd/MM/yyyy HH:mm')}</td>
+                  <td className="p-3 poppins-font border-b border-white">{match.home_team}</td>
+                  <td className="p-3 poppins-font border-b border-white">{match.away_team}</td>
+                  <td className="p-3 poppins-font border-b border-white">{match.home_score} - {match.away_score}</td>
                 </tr>
             ))}
             </tbody>
           </table>
-        </div>
       </div>
   );
 };

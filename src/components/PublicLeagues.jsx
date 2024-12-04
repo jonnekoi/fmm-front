@@ -22,29 +22,6 @@ const fetchleagues = async (setLeagues) => {
     }
 }
 
-/*
-const addUserToPublicLeague = async (event, id) => {
-    event.preventDefault();
-
-    const fetchOptions = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
-        }
-    };
-
-    try {
-        const response = await fetch(url + `/leagues/add/${id}`, fetchOptions);
-        if (response.ok) {
-            location.reload();
-        }
-    } catch (error) {
-        console.log(error);
-    }
-};
-*/
-
 const PublicLeagues = () => {
     const [leagues, setLeagues] = useState([]);
     const navigate = useNavigate();

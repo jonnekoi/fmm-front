@@ -21,14 +21,14 @@ const Leaderboard = () => {
 
 
   return (
-      <div className="w-2/6 flex flex-col m-3 points-table-mobile">
+      <div className="bg-slate-900 points-table w-2/6 flex flex-col m-5 points-table-mobile">
         <h1 className="font-myFont text-6xl">Points</h1>
-        <div className="bg-slate-900 m-auto w-full border mt-5 rounded">
+        <div className="m-auto w-full ">
           <table className="w-full">
             <thead>
             <tr>
-              <th className="p-2 border">Username</th>
-              <th className="p-2 border">Points</th>
+              <th className="p-3 poppins-font border-b border-white">Username</th>
+              <th className="p-3 poppins-font border-b border-white">Points</th>
             </tr>
             </thead>
             <tbody>
@@ -37,9 +37,9 @@ const Leaderboard = () => {
             .sort((a, b) => b.points - a.points)
             .slice(0, 5)
             .map((point, index) => (
-                <tr key={index}>
-                  <td className="p-2 border">{point.username}</td>
-                  <td className="p-2 border">{point.points}</td>
+                <tr key={index} className="cursor-pointer tr-alin">
+                  <td className="p-3 poppins-font border-b border-white">{point.username}</td>
+                  <td className="p-3 poppins-font border-b border-white">{point.points}</td>
                 </tr>
             ))}
             </tbody>

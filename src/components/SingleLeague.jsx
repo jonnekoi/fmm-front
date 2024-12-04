@@ -48,7 +48,7 @@ const SingleLeague = () => {
 
   return (
       <div
-          className="grid grid-rows-3 grid-flow-col justify-center m-5 single-league-mobile">
+          className="grid grid-rows-3 grid-flow-col justify-center single-league-mobile">
         <div className="row-span-3 m-5 bg-slate-900 p-5 single-league-components">
           <h1 className="font-myFont text-6xl pb-10">League Details</h1>
           <h2 className="font-semibold text-3xl">League Name: {league.name}</h2>

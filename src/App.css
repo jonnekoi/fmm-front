@@ -143,7 +143,7 @@
   border-radius: 1rem;
 }
 
-.login-component, .register-component, .manage-leagues, .your-leagues, .profile-component, .single-league-components, .next-matches-table {
+.login-component, .register-component, .manage-leagues, .your-leagues, .profile-component, .single-league-components, .next-matches-table, .points-table {
   border-radius: 1rem;
 }
 

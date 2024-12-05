@@ -97,6 +97,15 @@
     align-items: center;
     justify-content: center;
   }
+  .select-goal-scorer-input {
+    width: 90%;
+  }
+  .select-score-input {
+    width: 50%;
+  }
+  .submit-pick-button {
+    width: 100%;
+  }
 }
 
 .tableHover tr:hover {
@@ -143,7 +152,7 @@
   border-radius: 1rem;
 }
 
-.login-component, .register-component, .manage-leagues, .your-leagues, .profile-component, .single-league-components, .next-matches-table, .points-table {
+.login-component, .register-component, .manage-leagues, .your-leagues, .profile-component, .single-league-components, .next-matches-table, .points-table, .single-match {
   border-radius: 1rem;
 }
 
@@ -161,6 +170,14 @@
   border: 1px solid white;
   cursor: pointer;
   width: 30%;
+  font-family: Poppins, sans-serif;
+  border-radius: 1rem;
+}
+
+.submit-pick-button {
+  padding: 0.5rem;
+  border: 1px solid white;
+  cursor: pointer;
   font-family: Poppins, sans-serif;
   border-radius: 1rem;
 }
@@ -184,5 +201,4 @@
   text-align: left;
   padding: 8px;
 }
-
 

@@ -1,8 +1,7 @@
 import AddMatch from '../AdminPageComponents/AddMatch.jsx';
-import Leaderboard from '../../NO NEED/Leaderboard.jsx';
-import AdminMatchTable from '../AdminPageComponents/AdminMatchTable.jsx';
 import AddTeam from '../AdminPageComponents/addTeam.jsx';
 import AddPlayer from '../AdminPageComponents/AddPlayer.jsx';
+import AddLeagueName from '../AdminPageComponents/AddLeagueName.jsx';
 
 const Admin = () => {
   return (
@@ -10,8 +9,7 @@ const Admin = () => {
       <AddMatch></AddMatch>
       <AddTeam></AddTeam>
       <AddPlayer></AddPlayer>
-      <AdminMatchTable></AdminMatchTable>
-      <Leaderboard></Leaderboard>
+      <AddLeagueName></AddLeagueName>
     </div>
   );
 }

@@ -12,10 +12,21 @@ const fetchTeams = async (setTeams) => {
   }
 };
 
+const fetchLeagueNames = async (setLeagueNames) => {
+  try {
+    const response = await fetch (url + '/leaguename');
+    const responseData = await response.json();
+    setLeagueNames(responseData);
+  } catch (error) {
+    console.error('Error getting league names', error);
+  }
+}
+
 const handleAddMatch = async (event) => {
   event.preventDefault();
   const formdata = new FormData(event.target);
   const data = Object.fromEntries(formdata);
+  console.log(data);
 
   const fetchOptions = {
     method: 'POST',
@@ -32,7 +43,7 @@ const handleAddMatch = async (event) => {
     const responseData = await response.json();
     if (response.ok) {
       console.log(responseData);
-      location.reload();
+      //location.reload();
     }
   } catch (error) {
     console.log(error);
@@ -41,9 +52,11 @@ const handleAddMatch = async (event) => {
 
 const AddMatch = () => {
   const [teams, setTeams] = useState([]);
+  const [leagueNames, setLeagueNames] = useState([]);
 
   useEffect(() => {
     fetchTeams(setTeams);
+    fetchLeagueNames(setLeagueNames);
   }, []);
 
   return (
@@ -65,7 +78,15 @@ const AddMatch = () => {
             </select>
             <label className="font-myFont text-4xl" htmlFor="date">Day and time</label>
             <input className="m-2 bg-white rounded text-black p-1 text-center" type="datetime-local" name="matchday" />
-            <button className="font-myFont mt-10 text-4xl hover:underline" type="submit">Add Match</button>
+            <label className="font-myFont text-4xl" htmlFor="league_name">League</label>
+            <select className="m-2 bg-white rounded text-black p-1 text-center" name="league_name">
+              {leagueNames.map((league) => (
+                  <option key={league.id} value={league.id}>{league.league_name}</option>
+              ))}
+            </select>
+            <button className="font-myFont mt-10 text-4xl hover:underline"
+                    type="submit">Add Match
+            </button>
           </form>
         </div>
       </div>

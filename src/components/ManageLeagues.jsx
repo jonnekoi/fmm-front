@@ -1,9 +1,19 @@
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactMarkdown from 'react-markdown';
 
 const url = 'http://127.0.0.1:3000/v1';
 
 // This renders joining and creating leagues to LeaguePage
+
+const fetchLeagueNames = async (setLeagueNames) => {
+  try {
+    const response = await fetch (url + '/leaguename');
+    const responseData = await response.json();
+    setLeagueNames(responseData);
+  } catch (error) {
+    console.error('Error getting league names', error);
+  }
+}
 
 const ManageLeagues = () => {
   const [isPublic, setIsPublic] = useState('true');
@@ -13,6 +23,7 @@ const ManageLeagues = () => {
   const [showJoinLeague, setShowJoinLeague] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const [markdownContent, setMarkdownContent] = useState('');
+  const [leagueNames, setLeagueNames] = useState([]);
 
   useEffect(() => {
     const fetchMarkdownContent = async () => {
@@ -26,6 +37,7 @@ const ManageLeagues = () => {
     };
 
     fetchMarkdownContent();
+    fetchLeagueNames(setLeagueNames);
   }, []);
 
   const handleSelectChange = (event) => {
@@ -118,7 +130,7 @@ const ManageLeagues = () => {
                 {markdownContent ? (
                     <ReactMarkdown>{markdownContent}</ReactMarkdown>
                 ) : (
-                    <p>Loading markdown content...</p>
+                    <p>Loading content...</p>
                 )}
               </div>
           )}
@@ -193,6 +205,12 @@ const ManageLeagues = () => {
                       />
                     </div>
                 )}
+                <label className="poppins-font">Select Base League</label>
+                <select name="baseLeague" id="baseLeague" className="form-input">
+                  {leagueNames.map((league) => (
+                      <option key={league.id} value={league.id}>{league.league_name}</option>
+                  ))}
+                </select>
                 <textarea
                     name="desci"
                     className="form-input"

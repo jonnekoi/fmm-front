@@ -26,6 +26,7 @@ const SingleLeague = () => {
       try {
         const response = await fetch(`${url}/leagues/info/${leagueId}`, fetchOption);
         const data = await response.json();
+        console.log(data);
         setTimeout(() => {
           setLeague(data);
           setLoading(false);

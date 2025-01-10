@@ -165,6 +165,15 @@
   border-radius: 1rem;
 }
 
+.admin-button {
+  padding: 0.5rem;
+  border: 1px solid white;
+  cursor: pointer;
+  width: 50%;
+  font-family: Poppins, sans-serif;
+  border-radius: 1rem;
+}
+
 .join-button {
   padding: 0.5rem;
   border: 1px solid white;

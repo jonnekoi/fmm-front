@@ -4,12 +4,13 @@
 [Backend Repository](https://github.com/jonnekoi/FMM.git)
 
 ## Overview
-The Match Prediction App is a web application that allows users to view upcoming matches, submit score predictions, and manage their profiles. The app is built using React and communicates with a backend API to fetch match data and handle user interactions. 
+The app allow users to create leagues, assign matches to those leagues. You can invite your friends to your league by a league code chosen when creating league.
+You also have the chance to create public leagues to join without leaguecode. 
+
+and a lot more things...
 
 ## Features
-- **View Matches**: Users can view a list of upcoming matches.
-- **Submit Predictions**: Users can submit their score predictions for matches that have not yet started.
-- **Profile Management**: Users can update their profile information such as name, username, and email.
+
 
 ## Installation
 1. Clone the repository:

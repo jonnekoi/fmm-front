@@ -12,6 +12,7 @@ const SingleMatchPage = () => {
   const [players, setPlayers] = useState(null);
   const [userGuess, setUserGuess] = useState(null);
   const [scorerGuess, setScorerGuess] = useState(null);
+  const [error, setError] = useState(null);
 
   const getMatch = async (matchId) => {
     const fetchOptions = {
@@ -57,10 +58,10 @@ const SingleMatchPage = () => {
     try {
       console.log(data);
       const response = await fetch(url + `/matches/guess/${matchId}`, fetchOptions);
-      if (response.status === 304) {
-        console.log("error")
-      } else if (response.ok) {
-        console.log("ok")
+      if (response.ok) {
+        location.reload();
+      } else {
+        setError("Issue placing guess!")
       }
     } catch (error) {
       console.error('Error submitting guess:', error);
@@ -130,6 +131,11 @@ const SingleMatchPage = () => {
                               value={player.id}>{player.name}</option>
                   ))}
                 </select>
+                {error && (
+                    <div>
+                      <p className="poppins-font text-red-600">{error}</p>
+                    </div>
+                )}
                 <button type="submit" className="m-auto mb-5 w-1/2 submit-pick-button">Submit Pick</button>
               </form>
             </div>

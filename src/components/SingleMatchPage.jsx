@@ -1,5 +1,5 @@
 import {useParams} from 'react-router-dom';
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {format} from 'date-fns';
 
 const url = 'http://127.0.0.1:3000/v1';
@@ -10,6 +10,8 @@ const SingleMatchPage = () => {
   const {id: matchId} = useParams();
   const [match, setMatch] = useState(null);
   const [players, setPlayers] = useState(null);
+  const [userGuess, setUserGuess] = useState(null);
+  const [scorerGuess, setScorerGuess] = useState(null);
 
   const getMatch = async (matchId) => {
     const fetchOptions = {
@@ -44,7 +46,6 @@ const SingleMatchPage = () => {
     const formData = new FormData(event.target);
     formData.append("match_id", matchNUM);
     const data = Object.fromEntries(formData);
-    console.log(data);
     const fetchOptions = {
       method: 'POST',
       headers: {
@@ -66,9 +67,31 @@ const SingleMatchPage = () => {
     }
   }
 
+  const getUserGuess = async () => {
+    const fetchOptions = {
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + sessionStorage.getItem('token')
+      }
+    };
+    try {
+      const response = await fetch(url + `/matches/guess/score/${matchId}`, fetchOptions);
+      const guess = await response.json()
+      if (response.ok) {
+        const guessinNumbers = guess[0].home_score_guess + " - " + guess[0].away_score_guess;
+        const scorerGuess = guess[0].scorer;
+        setUserGuess(guessinNumbers);
+        setScorerGuess(scorerGuess);
+      }
+    } catch (error) {
+      console.error("Error fetching guess", error)
+    }
+  }
+
   useEffect(() => {
     getMatch(matchId);
     getPlayers(matchId);
+    getUserGuess(matchId)
   }, [matchId]);
 
   return (
@@ -80,6 +103,12 @@ const SingleMatchPage = () => {
               <p className="poppins-font text-2xl m-1">{match.home_score ? match.home_score : 0} - {match.away_score ? match.away_score : 0}</p>
               <form className="grid" onSubmit={placePick}>
                 <div className="flex justify-center flex-col">
+                  {userGuess && scorerGuess && (
+                      <div>
+                      <p className="poppins-font font-bold m-3">Current Score Guess: {userGuess}</p>
+                      <p className="poppins-font font-bold m-3">Current Scorer Guess: {scorerGuess}</p>
+                      </div>
+                  )}
                   <label className="poppins-font m-3">Home Score</label>
                   <input
                       className="m-auto w-1/6 p-0.5 bg-white rounded text-black text-center select-score-input"

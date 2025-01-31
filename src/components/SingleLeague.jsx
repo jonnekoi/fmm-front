@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import LeagueDetails from './LeagueDetails';
 import UsersList from './UsersList';
 import MatchesList from './MatchesList';
-import Scores from './Scores.jsx';
+import LeagueMatchScores from './LeagueMatchScores.jsx';
 
 const url = 'http://127.0.0.1:3000/v1';
 
@@ -27,7 +27,7 @@ const LeaguePage = () => {
         setTimeout(() => {
           setLeague(data);
           setLoading(false);
-        }, 1000);
+        }, 2000);
       } catch (error) {
         console.error('Error fetching league:', error);
       }
@@ -50,7 +50,7 @@ const LeaguePage = () => {
         <MatchesList matches={league.league_matches} onMatchClick={(matchId) => navigate(`/match/${matchId}`)} />
         <UsersList users={league.league_users} />
         <div className="col-span-3">
-          <Scores />
+          <LeagueMatchScores matches={league.league_matches} />
         </div>
       </div>
   );

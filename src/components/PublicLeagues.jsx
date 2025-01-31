@@ -35,7 +35,7 @@ const PublicLeagues = () => {
     };
 
     return (
-        <div className="m-5 bg-slate-900 next-matches-table">
+        <div className="m-5 bg-slate-900 league-data-component">
             <h1 className="font-myFont text-6xl pb-5 ">Public Leagues</h1>
             <table className="">
                 <thead>

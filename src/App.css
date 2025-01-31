@@ -10,14 +10,6 @@
     flex-direction: column;
     align-items: center;
   }
-  .main-outlet-mobile {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-  }
   .icons-mobile {
     display: none;
     grid-template-columns: repeat(2, 1fr);
@@ -44,7 +36,7 @@
     width: 100%;
     margin: 0;
   }
-  .manage-leagues-mobile, .match-detail-mobile, .add-player-mobile, .add-team-mobile, .matches-mobile-table, .add-match-mobile, .points-table-mobile, .next-matches-table, .single-league-components, .table-mobile {
+  .manage-leagues-mobile, .match-detail-mobile, .add-player-mobile, .add-team-mobile, .matches-mobile-table, .add-match-mobile, .points-table-mobile, .single-league-components, .table-mobile {
     width: 100%;
   }
   .header-links {
@@ -107,11 +99,6 @@
   background-color: #323c54;
 }
 
-.info-icon:hover .tooltip-text {
-  display: block;
-  opacity: 1;
-}
-
 .main-wrapper {
   display: flex;
   justify-content: center;
@@ -143,7 +130,7 @@
   border-radius: 1rem;
 }
 
-.login-component, .register-component, .manage-leagues, .your-leagues, .profile-component, .single-league-components, .next-matches-table, .points-table, .single-match, .league-data-component {
+.login-component, .register-component, .manage-leagues, .your-leagues, .profile-component, .single-league-components, .points-table, .single-match, .league-data-component {
   border-radius: 1rem;
 }
 
@@ -152,15 +139,6 @@
   border: 1px solid white;
   cursor: pointer;
   width: 100%;
-  font-family: Poppins, sans-serif;
-  border-radius: 1rem;
-}
-
-.admin-button {
-  padding: 0.5rem;
-  border: 1px solid white;
-  cursor: pointer;
-  width: 50%;
   font-family: Poppins, sans-serif;
   border-radius: 1rem;
 }

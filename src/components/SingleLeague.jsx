@@ -45,13 +45,13 @@ const LeaguePage = () => {
   }
 
   return (
-      <div className="grid grid-rows-3 grid-flow-col justify-center single-league-mobile">
+      <div className="grid grid-rows-2 grid-cols-3 m-5 leagues-mobile">
         <LeagueDetails league={league} />
-        <div className="col-span-3 m-3 single-league-components">
+        <MatchesList matches={league.league_matches} onMatchClick={(matchId) => navigate(`/match/${matchId}`)} />
+        <UsersList users={league.league_users} />
+        <div className="col-span-3">
           <Scores />
         </div>
-        <UsersList users={league.league_users} />
-        <MatchesList matches={league.league_matches} onMatchClick={(matchId) => navigate(`/match/${matchId}`)} />
       </div>
   );
 };

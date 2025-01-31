@@ -24,7 +24,7 @@ const MatchesList = ({ matches, onMatchClick }) => {
   };
 
   return (
-      <div className="row-span-1 col-span-1 m-3 bg-slate-900 single-league-components">
+      <div className="flex flex-col bg-slate-900 m-5 league-data-component">
         <h1 className="font-myFont text-6xl pb-5">League Matches</h1>
         <table className="w-full table-mobile">
           <thead>

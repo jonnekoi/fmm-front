@@ -3,7 +3,7 @@ import Leaderboard from '../../NO NEED/Leaderboard.jsx';
 const PointsPage = () => {
   return (
       <>
-        <div className="flex justify-center m-5 points-mobile">
+        <div className="flex justify-center m-5">
           <Leaderboard></Leaderboard>
         </div>
       </>

@@ -24,6 +24,7 @@ const NextMatches = () => {
 
   const currentDate = new Date();
   const sortedMatches = matches
+  .filter(match => match.home_score === null && match.away_score === null)
   .filter(match => new Date(match.matchday) >= currentDate)
   .sort((a, b) => new Date(a.matchday) - new Date(b.matchday))
   .slice(0, 5);

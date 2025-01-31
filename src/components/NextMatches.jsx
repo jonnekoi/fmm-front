@@ -29,9 +29,9 @@ const NextMatches = () => {
   .slice(0, 5);
 
   return (
-      <div className="flex flex-col m-3 bg-slate-900 next-matches-table">
+      <div className="flex flex-col bg-slate-900 next-matches-table">
         <h1 className="font-myFont text-6xl">Next 5 matches</h1>
-          <table className="w-full">
+          <table className="w-full table-mobile">
             <thead>
             <tr>
               <th className="p-3 poppins-font border-b border-white">Match Date</th>

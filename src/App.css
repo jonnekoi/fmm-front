@@ -19,7 +19,7 @@
     border-radius: 0;
   }
   .icons-mobile {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(2, 1fr);
   }
   .matches-mobile {
@@ -33,7 +33,7 @@
   .single-league-mobile {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    align-items: center;
   }
   .league-details-mobile {
     width: 100%;
@@ -52,8 +52,8 @@
     width: 100%;
     margin: 0;
   }
-  .manage-leagues-mobile, .match-detail-mobile, .add-player-mobile, .add-team-mobile, .matches-mobile-table, .add-match-mobile, .points-table-mobile, .next-matches-table {
-    width: 90%;
+  .manage-leagues-mobile, .match-detail-mobile, .add-player-mobile, .add-team-mobile, .matches-mobile-table, .add-match-mobile, .points-table-mobile, .next-matches-table, .single-league-components, .table-mobile {
+    width: 100%;
   }
   .header-links {
     display: none;
@@ -86,7 +86,7 @@
   }
   .content-container {
     min-height: 100vh;
-    overflow: auto;
+    margin: 0;
   }
   .join-button {
     width: 100%;
@@ -97,6 +97,10 @@
     align-items: center;
     justify-content: center;
   }
+  .home-mobile-icons {
+    margin: auto;
+    width: 100%;
+  }
   .select-goal-scorer-input {
     width: 90%;
   }
@@ -105,6 +109,9 @@
   }
   .submit-pick-button {
     width: 100%;
+  }
+  .table-mobile th, .table-mobile td {
+    padding: 4px;
   }
 }
 
@@ -126,12 +133,8 @@
 }
 
 .content-container {
-  background-color: #3f455e;
-  width: 100%;
-  max-width: 1500px;
-  height: calc(100vh - 20px);
-  margin: 10px auto;
-  border-radius: 30px;
+  width: 90%;
+  height: 100dvh;
 }
 
 .form-input {
@@ -199,15 +202,6 @@
   border-bottom: none;
 }
 
-.single-league-mobile-table {
-  width: 100%;
-  overflow-x: auto;
-  border-collapse: collapse;
-}
 
-.single-league-mobile-table th,
-.single-league-mobile-table td {
-  text-align: left;
-  padding: 8px;
-}
+
 

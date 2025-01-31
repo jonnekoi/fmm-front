@@ -4,6 +4,7 @@ import LeagueDetails from './LeagueDetails';
 import UsersList from './UsersList';
 import MatchesList from './MatchesList';
 import LeagueMatchScores from './LeagueMatchScores.jsx';
+import { Bars } from "react-loader-spinner";
 
 const url = 'http://127.0.0.1:3000/v1';
 
@@ -37,7 +38,17 @@ const LeaguePage = () => {
   }, [leagueId]);
 
   if (loading) {
-    return <div className="font-myFont text-6xl">Loading...</div>;
+    return (
+        <Bars
+            height="80"
+            width="80"
+            color="#ffff"
+            ariaLabel="bars-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+        />
+    )
   }
 
   if (!league) {
@@ -45,11 +56,13 @@ const LeaguePage = () => {
   }
 
   return (
-      <div className="grid grid-rows-2 grid-cols-3 m-5 leagues-mobile">
+      <div className="grid grid-rows-2 grid-cols-4 m-5 leagues-mobile">
         <LeagueDetails league={league} />
+        <div className="col-span-2">
         <MatchesList matches={league.league_matches} onMatchClick={(matchId) => navigate(`/match/${matchId}`)} />
+        </div>
         <UsersList users={league.league_users} />
-        <div className="col-span-3">
+        <div className="col-span-4">
           <LeagueMatchScores matches={league.league_matches} />
         </div>
       </div>

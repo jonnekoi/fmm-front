@@ -96,9 +96,9 @@ const SingleMatchPage = () => {
   }, [matchId]);
 
   return (
-      <div className="bg-slate-900 single-match m-5 w-1/2 leagues-mobile">
+      <div className="w-1/2 m-5 leagues-mobile">
         {match && players && (
-            <div>
+            <div className="bg-slate-900 single-match m-5 w-full">
               <h1 className="poppins-font font-bold pt-8 text-2xl">{match.home_team} - {match.away_team}</h1>
               <p className="poppins-font m-1">{format(new Date (match.matchday), 'dd/MM/yyyy HH:mm')}</p>
               <p className="poppins-font text-2xl m-1">{match.home_score ? match.home_score : 0} - {match.away_score ? match.away_score : 0}</p>

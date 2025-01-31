@@ -92,7 +92,7 @@ const TeamStats = () => {
             <span className="poppins-font">{stats[0].losses}</span>
           </div>
           <div className="flex justify-between">
-            <span className="poppins-font">Best Scorer</span>
+            <span className="poppins-font">Top Scorer</span>
             <span className="poppins-font">TO BE IMPLEMENTED</span>
           </div>
           <h1 className="poppins-font font-bold text-1xl p-4">{match.away_team}</h1>
@@ -113,7 +113,7 @@ const TeamStats = () => {
             <span className="poppins-font">{stats[1].losses}</span>
           </div>
           <div className="flex justify-between">
-            <span className="poppins-font">Best Scorer</span>
+            <span className="poppins-font">Top Scorer</span>
             <span className="poppins-font">TO BE IMPLEMENTED</span>
           </div>
         </div>

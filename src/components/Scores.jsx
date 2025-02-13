@@ -3,7 +3,6 @@ import { format } from 'date-fns';
 
 const url = 'http://127.0.0.1:3000/v1';
 
-// This renders table of next matches
 
 const fetchMatches = async (setMatches) => {
   try {
@@ -44,6 +43,8 @@ const Scores = () => {
   };
 
 
+
+
   return (
       <div className="flex flex-col bg-slate-900 m-5 league-data-component">
         <h1 className="font-myFont text-6xl">Scores</h1>
@@ -70,7 +71,7 @@ const Scores = () => {
           ))}
           </tbody>
         </table>
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center">
           <button
               onClick={prevPage}
               disabled={currentPage === 0}

@@ -30,7 +30,7 @@ const addLeagueName = () => {
 return (
     <div className="w-2/6 flex flex-col m-3 add-match-mobile">
       <h1 className="font-myFont text-6xl">Add League Name</h1>
-      <div className="bg-slate-900 m-auto w-full border mt-5 p-5 rounded">
+      <div className="bg-slate-900 m-auto w-full mt-5 p-5 rounded">
         <form onSubmit={handleAddLeagueName} className="flex flex-col m-auto w-3/4">
           <label className="font-myFont text-4xl">League Name</label>
           <input className="m-2 bg-white rounded text-black p-1 text-center" type="text" name="leaguename" required/>

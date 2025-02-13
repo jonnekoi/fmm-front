@@ -130,7 +130,7 @@
   border-radius: 1rem;
 }
 
-.login-component, .register-component, .manage-leagues, .your-leagues, .profile-component, .single-league-components, .points-table, .single-match, .league-data-component {
+.login-component, .register-component, .manage-leagues, .your-leagues, .profile-component, .single-league-components, .points-table, .single-match, .league-data-component, .admin-models {
   border-radius: 1rem;
 }
 
@@ -168,6 +168,9 @@
   border-bottom: none;
 }
 
-
+.selected-row {
+  background-color: #eeeef3;
+  color: black;
+}
 
 

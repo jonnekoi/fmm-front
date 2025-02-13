@@ -63,17 +63,15 @@ const TeamStats = () => {
     )
   }
 
-  console.log(stats);
 
   const HomeTeamTotalMatches = parseInt(stats[0].losses) + parseInt(stats[0].wins) + parseInt(stats[0].ties);
   const HomeTeamGoalsScored = parseInt(stats[0].goals_scored);
   const HomeAverageGoals = parseFloat((HomeTeamGoalsScored / HomeTeamTotalMatches).toFixed(2));
-  const HomeAveragexG = parseInt(stats[0].total_xG) /HomeTeamTotalMatches.toFixed(2);
 
   const AwayTeamTotalMatches = parseInt(stats[1].losses) + parseInt(stats[1].wins) + parseInt(stats[1].ties);
   const AwayTeamGoalsScored = parseInt(stats[1].goals_scored);
   const AwayAverageGoals = parseFloat((AwayTeamGoalsScored / AwayTeamTotalMatches).toFixed(2));
-  const AwayAveragexG = parseInt(stats[1].total_xG) /AwayTeamTotalMatches.toFixed(2);
+
 
   return (
       <div className="w-1/2 m-5">
@@ -96,10 +94,6 @@ const TeamStats = () => {
             <span className="poppins-font">{stats[0].losses}</span>
           </div>
           <div className="flex justify-between">
-            <span className="poppins-font">Average xG</span>
-            <span className="poppins-font">{HomeAveragexG}</span>
-          </div>
-          <div className="flex justify-between">
             <span className="poppins-font">Top Scorer</span>
             <span className="poppins-font">TO BE IMPLEMENTED</span>
           </div>
@@ -119,10 +113,6 @@ const TeamStats = () => {
           <div className="flex justify-between">
             <span className="poppins-font">Losses</span>
             <span className="poppins-font">{stats[1].losses}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="poppins-font">Average xG</span>
-            <span className="poppins-font">{AwayAveragexG}</span>
           </div>
           <div className="flex justify-between">
             <span className="poppins-font">Top Scorer</span>

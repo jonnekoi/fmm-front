@@ -74,11 +74,9 @@ const Layout = () => {
                   className="text-5xl text-slate-200 font-myFont mb-5">L o g o u t
           </button>
         </div>
-        <main className="main-wrapper">
           <div className="content-container">
             <Outlet/>
           </div>
-        </main>
       </>
   );
 };

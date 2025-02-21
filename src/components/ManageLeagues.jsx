@@ -98,7 +98,7 @@ const ManageLeagues = () => {
   };
 
   return (
-      <div className="m-5 w-1/3 manage-leagues-mobile flex flex-col items-center">
+      <div className="m-5 manage-leagues-mobile flex flex-col items-center">
         <div className="justify-around mb-5 flex w-full flex-col items-center">
           <button className="button bg-buttonColor m-2" onClick={() => {
             setShowAbout((prevState) => !prevState);

@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         myFont: ['myFont', 'cursive'],
+        inter: ['Inter', 'sans-serif'],
       },
       colors: {
         primary: '#3f455e',

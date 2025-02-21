@@ -39,15 +39,17 @@ const LeaguePage = () => {
 
   if (loading) {
     return (
-        <Bars
-            height="80"
-            width="80"
-            color="#ffff"
-            ariaLabel="bars-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-        />
+        <div className="mt-10">
+          <Bars
+              height="80"
+              width="80"
+              color="#ffff"
+              ariaLabel="bars-loading"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+          />
+        </div>
     )
   }
 

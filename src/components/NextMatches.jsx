@@ -30,7 +30,7 @@ const NextMatches = () => {
   .slice(0, 5);
 
   return (
-      <div className="flex flex-col bg-slate-900 m-5 league-data-component">
+      <div className="flex flex-col bg-slate-900 m-5 league-data-component next-matches-mobile">
         <h1 className="font-myFont text-6xl">Next 5 matches</h1>
           <table className="w-full table-mobile">
             <thead>

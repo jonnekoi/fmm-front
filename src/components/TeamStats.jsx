@@ -74,8 +74,8 @@ const TeamStats = () => {
 
 
   return (
-      <div className="w-1/2 m-5">
-        <div className="bg-slate-900 single-match m-5 w-full p-4">
+      <div className="w-full m-5 mobile-team-stats">
+        <div className="bg-slate-900 w-full single-match p-4">
           <h1 className="poppins-font font-bold text-1xl p-4">{match.home_team}</h1>
           <div className="flex justify-between">
             <span className="poppins-font">Average goals</span>

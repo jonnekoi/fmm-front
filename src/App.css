@@ -30,13 +30,6 @@
     width: 100%;
     margin: 0;
   }
-  .leagues-mobile {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    margin: 0;
-  }
   .manage-leagues-mobile, .mobile-points-page, .league-details-mobile, .users-list-mobile, .match-detail-mobile, .add-player-mobile, .add-team-mobile, .matches-mobile-table, .add-match-mobile, .single-league-components, .table-mobile {
     width: 90%;
   }
@@ -98,6 +91,25 @@
   }
   .table-mobile th td, .table-mobile td {
     padding: 0.16rem;
+  }
+  .match-page-mobile {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mobile-team-stats {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .leagues-mobile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
   }
 }
 

@@ -30,11 +30,8 @@
     width: 100%;
     margin: 0;
   }
-  .manage-leagues-mobile, .mobile-points-page, .league-details-mobile, .users-list-mobile, .match-detail-mobile, .add-player-mobile, .add-team-mobile, .matches-mobile-table, .add-match-mobile, .single-league-components, .table-mobile {
+  .manage-leagues-mobile, .next-matches-mobile, .mobile-points-page, .league-details-mobile, .users-list-mobile, .match-detail-mobile, .add-player-mobile, .add-team-mobile, .matches-mobile-table, .add-match-mobile, .single-league-components, .table-mobile {
     width: 90%;
-  }
-  .next-matches-mobile {
-    width: 100%;
   }
 
   .scores-mobile {

@@ -53,7 +53,7 @@ const ProfileComponent = () => {
 
 
   return (
-      <div className="bg-slate-900 w-1/4 m-5 p-5 profile-mobile profile-component">
+      <div className="bg-slate-900 w-1/4 m-7 p-5 profile-mobile profile-component">
         <h1 className="font-myFont text-6xl mb-10">Account</h1>
         <img src={profilepic} alt="profilepic" className="md:w-40 md:h-40 m-auto profile-pic-mobile"/>
         <form onSubmit={(e) => submitChanges(e, setError)}

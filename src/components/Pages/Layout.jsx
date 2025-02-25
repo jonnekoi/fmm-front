@@ -27,7 +27,7 @@ const Layout = () => {
 
   return (
       <>
-        <header className="bg-backcolor sticky top-0 z-50 p-1 pb-3 w-auto m-auto mx-auto flex items-center justify-between">
+        <header className="bg-backcolor pb-2 flex items-center justify-between">
           <div className="text-3xl font-bold text-slate-200 ml-4">
             <h1 className="font-myFont text-6xl">Logo Here</h1>
           </div>

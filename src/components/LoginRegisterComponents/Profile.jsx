@@ -41,6 +41,8 @@ const ProfileComponent = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
 
+
+  // SESSIONSTORAGE FOR USERNAME, NAME, EMAIL FOR DEVELOPMENT PURPOSES
   useEffect(() => {
     const currentName = sessionStorage.getItem('name');
     const currentUsername = sessionStorage.getItem('username');
